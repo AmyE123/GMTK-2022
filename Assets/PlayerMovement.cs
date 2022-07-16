@@ -1,22 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    private Vector3 _velocity;
+    private const int PLAYER_MOVEMENT_SPEED = 5;
+    private const int PLAYER_ROTATION_SPEED = 10;
 
     [SerializeField] private Transform _transform;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _rotationSpeed;
     [SerializeField] private CharacterController _characterController;
+
+    private Vector3 _velocity;
+    private float _movementSpeed = PLAYER_MOVEMENT_SPEED;
+    private float _rotationSpeed = PLAYER_ROTATION_SPEED;
 
     void Update()
     {
         bool isGrounded = _characterController.isGrounded;
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-
         move = Vector3.ClampMagnitude(move, 1);
 
         if (isGrounded && _velocity.y < 0)
@@ -30,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, _rotationSpeed * Time.deltaTime);
             float alignment = Vector3.Dot(transform.forward, move.normalized);
             alignment = Mathf.Clamp01(alignment);
-            _characterController.Move(transform.forward * Time.deltaTime * move.magnitude * alignment * _speed);
+            _characterController.Move(transform.forward * Time.deltaTime * move.magnitude * alignment * _movementSpeed);
         }        
     }
 }
