@@ -30,6 +30,6 @@ public class PlayerMovement : MonoBehaviour
             float alignment = Vector3.Dot(transform.forward, move.normalized);
             alignment = Mathf.Clamp01(alignment);
             _characterController.Move(transform.forward * Time.deltaTime * move.magnitude * alignment * _movementSpeed);
-        }        
+        }
     }
 }
