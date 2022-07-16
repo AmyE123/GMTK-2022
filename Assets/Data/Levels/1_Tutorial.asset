@@ -18,7 +18,7 @@ MonoBehaviour:
   - _value: 0
     _weight: 1
   - _value: 1
-    _weight: 2
+    _weight: 1
   _potentialNumbers:
   - _value: 6
     _weight: 1
@@ -29,5 +29,7 @@ MonoBehaviour:
     _weight: 2
   - _value: {fileID: 11400000, guid: 9df51ed0cbd69a346b99f96965458669, type: 2}
     _weight: 1
-  _diceSpawnTime: 0
-  _diceExpireTime: 0
+  _maxDice: 5
+  _diceSpawnTime: 15
+  _ovenCount: 1
+  _shelfSpace: 2

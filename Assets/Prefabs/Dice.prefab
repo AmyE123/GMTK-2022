@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8925932019628620629}
   - component: {fileID: 6661917658420462639}
+  - component: {fileID: 5902548769486526435}
   m_Layer: 0
   m_Name: Dice
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 3342977652845942303}
   m_LocalRotation: {x: 0.7225454, y: -0, z: -0, w: 0.6913235}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.925, y: 0.925, z: 0.925}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6128238897235004647}
   m_Father: {fileID: 0}
@@ -55,6 +56,24 @@ MonoBehaviour:
   _mesh: {fileID: 6480887352153450150}
   _hopTime: 0.5
   _hopHeight: 0.5
+  _allColors:
+  - {fileID: 11400000, guid: 2feab55e25f55fd48b577b4b05f80d7f, type: 2}
+  - {fileID: 11400000, guid: b0d24c45932a73a4b895cb8f16ab6069, type: 2}
+  - {fileID: 11400000, guid: 7d3f67b355eeca041b8691bc8434c6b0, type: 2}
+  - {fileID: 11400000, guid: e95a5c28e3a5e0541bec76e8faf3c4df, type: 2}
+--- !u!65 &5902548769486526435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3342977652845942303}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7889352916718240269
 GameObject:
   m_ObjectHideFlags: 0

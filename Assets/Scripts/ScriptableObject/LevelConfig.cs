@@ -20,14 +20,22 @@ namespace GameData
         private RecipeOdds[] _potentialRecipes;
 
         [SerializeField]
+        private int _maxDice;
+
+        [SerializeField]
         private int _diceSpawnTime;
 
         [SerializeField]
-        private int _diceExpireTime;
+        private int _ovenCount;
+
+        [SerializeField]
+        private int _shelfSpace;
 
         public string Description => _description;
         public int DiceSpawnTime => _diceSpawnTime;
-        public int DiceExpireTime => _diceExpireTime;
+        public int MaxDice => _maxDice;
+        public int OvenCount => _ovenCount;
+        public int ShelfSpace => _shelfSpace;
 
         public DiceColor GetRandomColor() => GetRandomValue(_potentialColors);
         public Recipe GetRandomReceipe() => GetRandomValue(_potentialRecipes);

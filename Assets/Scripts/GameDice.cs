@@ -18,6 +18,9 @@ public class GameDice : MonoBehaviour
     [SerializeField]
     private float _hopHeight;
 
+    [SerializeField]
+    private DiceColorSetting[] _allColors;
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) SetNumberHop(1);
@@ -26,6 +29,11 @@ public class GameDice : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4)) SetNumberHop(4);
         if (Input.GetKeyDown(KeyCode.Alpha5)) SetNumberHop(5);
         if (Input.GetKeyDown(KeyCode.Alpha6)) SetNumberHop(6);
+    }
+
+    public void OnMouseDown()
+    {
+        Destroy(gameObject);
     }
 
     public void SetNumberHop(int num)
@@ -40,8 +48,17 @@ public class GameDice : MonoBehaviour
         transform.localRotation = targetRotation;
     }
 
-    public void SetConfig(DiceColorSetting setting)
+    public void SetColorAndValue(DiceColor col, int val)
     {
-        _mesh.sharedMaterials = new Material[] { setting.MainMaterial, setting.PipMaterial };
+        SetNumber(val);
+
+        foreach (DiceColorSetting setting in _allColors)
+        {
+            if (setting.ColorName != col)
+                continue;
+
+            _mesh.sharedMaterials = new Material[] { setting.MainMaterial, setting.PipMaterial };
+            break;
+        }
     }
 }
