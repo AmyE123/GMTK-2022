@@ -11,3 +11,16 @@
 * make only the orders appear in the UI not all recipies
 * the bin
 * tweens/animations for picking up items/ putting down
+* Tutorial Messages
+    * Putting dice with matching numbers in
+    * Giving items to customers
+    * Freshness bonus
+    * Putting dice with matching colors in
+    * Waiting for next delivery of dice + any unused decay
+
+* Tutorial level with special rules...?
+* win screen
+* lose screen
+* happiness counter
+* Title screen
+* level select
