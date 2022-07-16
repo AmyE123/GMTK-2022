@@ -49,6 +49,17 @@ namespace GameData
         public int TotalLevelTime => _totalLevelTime;
         public int HappinessRequirement => _happinessRequirement;
 
+        public IEnumerable<Recipe> AllRecipies
+        {
+            get
+            {
+                foreach (RecipeOdds odds in _potentialRecipes)
+                {
+                    yield return odds.Value;
+                }
+            }
+        }
+
         public DiceColor GetRandomColor() => GetRandomValue(_potentialColors);
         public Recipe GetRandomReceipe() => GetRandomValue(_potentialRecipes);
         public int GetRandomNumber() => GetRandomValue(_potentialNumbers);

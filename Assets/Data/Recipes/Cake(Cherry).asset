@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fd94bd823cf2648a47703aca60b74f, type: 3}
   m_Name: Cake(Cherry)
   m_EditorClassIdentifier: 
+  _icon: {fileID: 21300000, guid: 07b83a29b6c23b14f9ead0627cb33fea, type: 3}
+  _displayName: Cherry Cake
   _requiredColors: 00000000
-  _requiredNumbers: 0500000003000000
+  _requiredNumbers: 05000000
+  _bakeTime: 0
+  _baseHappinessPoints: 0

@@ -12,6 +12,9 @@ public class LevelController : MonoBehaviour
     private InputShelf _diceShelf;
 
     [SerializeField]
+    private RecipeList _recipeUI;
+
+    [SerializeField]
     private float _timeRemaining;
 
     [SerializeField]
@@ -21,6 +24,7 @@ public class LevelController : MonoBehaviour
 
     public void Start()
     {
+        _recipeUI.SetLevel(_levelConfig);
         _diceShelf.SetShelfWidth(_levelConfig.MaxDice);
         DoRefill();
     }
