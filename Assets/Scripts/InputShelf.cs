@@ -34,16 +34,19 @@ public class InputShelf : MonoBehaviour
 
     public void RefillDice(LevelConfig levelData)
     {
+        int delayCount = 0;
+
         for (int i=0; i<ShelfWidth; i++)
         {
             if (_diceSlots[i] != null)
                 continue;
 
-            SpawnSingleDie(levelData, i);
+            SpawnSingleDie(levelData, i, delayCount);
+            delayCount ++;
         }
     }
 
-    public void SpawnSingleDie(LevelConfig levelData, int slotNum)
+    public void SpawnSingleDie(LevelConfig levelData, int slotNum, int delayNum)
     {
         DiceColor color = levelData.GetRandomColor();
         int value = levelData.GetRandomNumber();
@@ -59,7 +62,7 @@ public class InputShelf : MonoBehaviour
         dice.transform.localPosition = finalPos + Vector3.up;
         dice.transform.localScale = Vector3.zero;
 
-        dice.transform.DOScale(finalScale, _spawnInTime).SetEase(Ease.OutExpo).SetDelay(_spawnDelay * slotNum);
-        dice.transform.DOLocalMove(finalPos, _spawnInTime).SetEase(Ease.OutBounce).SetDelay(_spawnDelay * slotNum);
+        dice.transform.DOScale(finalScale, _spawnInTime).SetEase(Ease.OutExpo).SetDelay(_spawnDelay * delayNum);
+        dice.transform.DOLocalMove(finalPos, _spawnInTime).SetEase(Ease.OutBounce).SetDelay(_spawnDelay * delayNum);
     }
 }
