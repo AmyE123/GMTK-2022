@@ -15,7 +15,7 @@ public class LevelController : MonoBehaviour
     private OutputShelf _customerShelf;
 
     [SerializeField]
-    private RecipeList _recipeUI;
+    private OrderList _orderUI;
 
     [SerializeField]
     private float _timeRemaining;
@@ -30,7 +30,6 @@ public class LevelController : MonoBehaviour
 
     public void Start()
     {
-        _recipeUI.SetLevel(_levelConfig);
         _customerShelf.SetShelfWidth(_levelConfig.MaxOrders);
         _diceShelf.SetShelfWidth(_levelConfig.MaxDice);
         DoRefill();

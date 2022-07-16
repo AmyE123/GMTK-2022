@@ -854,5 +854,10 @@ PrefabInstance:
       propertyPath: _recipeUI
       value: 
       objectReference: {fileID: 1832321366}
+    - target: {fileID: 7787716742209628489, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
+        type: 3}
+      propertyPath: _orderList
+      value: 
+      objectReference: {fileID: 1832321366}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e927f4ba1dcb64c80dcc373ec0365c, type: 3}

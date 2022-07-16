@@ -16,21 +16,27 @@ public class RecipeUI : MonoBehaviour
     private RectTransform _requirementParent;
     
     private Recipe _recipe;
+    private Customer _customer;
 
-    public void SetRecipe(Recipe recipe)
+    public void SetCustomer(Customer customer)
     {
-        _recipe = recipe;
+        _recipe = customer.RecipeRequest;
 
-        foreach (DiceColor col in recipe.Colors)
+        foreach (DiceColor col in _recipe.Colors)
         {
             GameObject newObj = Instantiate(_requirementPrefab, _requirementParent);
             newObj.GetComponent<RecipeDice>().SetColor(col);
         }
 
-        foreach (int numberValue in recipe.Numbers)
+        foreach (int numberValue in _recipe.Numbers)
         {
             GameObject newObj = Instantiate(_requirementPrefab, _requirementParent);
             newObj.GetComponent<RecipeDice>().SetValue(numberValue);
         }
+    }
+
+    public void OnCompleted()
+    {
+
     }
 }
