@@ -8,3 +8,5 @@
 * orders
 * a way to remove from shelf
 * a way to add to counter
+* make only the orders appear in the UI not all recipies
+* contextual UI
