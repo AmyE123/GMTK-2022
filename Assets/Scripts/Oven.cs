@@ -1,18 +1,24 @@
-using System.Collections;
+using GameData;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Oven : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool IsCompatible;
+    public bool IsOccupied;
+
+    private List<Recipe> _levelRecipes;
+
+    public bool GiveDice(List<GameDice> DiceList)
     {
-        
+        return false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetLevelConfig(LevelConfig levelConfig)
     {
-        
+        foreach (Recipe recipe in levelConfig.AllRecipies)
+        {
+            _levelRecipes.Add(recipe);
+        }
     }
 }

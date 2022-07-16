@@ -33,7 +33,7 @@ MonoBehaviour:
   _diceSpawnTime: 20
   _orderSpawnTime: 5
   _maxOrders: 3
-  _ovenCount: 1
+  _ovenCount: 3
   _shelfSpace: 2
   _totalLevelTime: 90
   _happinessRequirement: 0
