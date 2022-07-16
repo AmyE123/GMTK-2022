@@ -31,11 +31,15 @@ namespace GameData
         [SerializeField]
         private int _shelfSpace;
 
+        [SerializeField]
+        private int _totalLevelTime;
+
         public string Description => _description;
-        public int DiceSpawnTime => _diceSpawnTime;
+        public int RefillTime => _diceSpawnTime;
         public int MaxDice => _maxDice;
         public int OvenCount => _ovenCount;
         public int ShelfSpace => _shelfSpace;
+        public int TotalLevelTime => _totalLevelTime;
 
         public DiceColor GetRandomColor() => GetRandomValue(_potentialColors);
         public Recipe GetRandomReceipe() => GetRandomValue(_potentialRecipes);
