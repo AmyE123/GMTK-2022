@@ -22,8 +22,8 @@ public class ObjectShelf : PickupHolder
         {
             if (obj == _putDownObjects[i])
             {
-                Debug.Log("YOSSSS");
                 _putDownObjects[i] = null;
+                break;
             }
         }
     }

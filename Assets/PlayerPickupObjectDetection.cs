@@ -22,6 +22,9 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     [SerializeField]
     private Transform _contextualTarget;
 
+    public string ContextualAction => _contextualAction;
+    public Transform ContextualTarget => _contextualTarget;
+
     // Generic function that can be used on any type of GameObject
     private T GetClosest<T>(List<T> inList) where T: MonoBehaviour
     {
@@ -59,12 +62,13 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         }
         else if (_IsFacingShelf && isHoldingStuff)
         {
+            PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
+
             _contextualAction = "put down";
-            _contextualTarget = _ClosestShelf.transform; // yes this is wasteful but gamejam
+            _contextualTarget = topHeldItem.transform; // yes this is wasteful but gamejam
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
                 PutDownObject(topHeldItem);  
             }
         }

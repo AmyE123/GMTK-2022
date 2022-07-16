@@ -14,7 +14,7 @@ public abstract class W2C : MonoBehaviour
     // Tracking information
     private Camera _camera;
     private Canvas _canvas;
-    private bool _dontFollow;
+    protected bool _dontFollow;
 
     // Other components
     protected RectTransform _trackRect;  // don't do position tweens on this

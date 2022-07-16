@@ -49,6 +49,11 @@ namespace WorldToCanvas
             return comp;
         }
 
+        public static void Initialize(W2C w2c)
+        {
+            w2c.Initialize(_instance._canvas, _instance._camera);
+        }
+
         public static T InstantiateAs<T>(GameObject prefab) where T : W2C
         {
             return Instantiate(prefab) as T;

@@ -35,8 +35,8 @@ public class InputShelf : PickupHolder
         {
             if (obj == _diceSlots[i])
             {
-                Debug.Log("YEASSS");
                 _diceSlots[i] = null;
+                break;
             }
         }
     }
