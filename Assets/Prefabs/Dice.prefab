@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3342977652845942303}
   m_LocalRotation: {x: 0.7225454, y: -0, z: -0, w: 0.6913235}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.925, y: 0.925, z: 0.925}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6128238897235004647}
@@ -56,6 +56,7 @@ MonoBehaviour:
   _mesh: {fileID: 6480887352153450150}
   _hopTime: 0.5
   _hopHeight: 0.5
+  _vanishTime: 0.5
   _allColors:
   - {fileID: 11400000, guid: 2feab55e25f55fd48b577b4b05f80d7f, type: 2}
   - {fileID: 11400000, guid: b0d24c45932a73a4b895cb8f16ab6069, type: 2}

@@ -19,7 +19,15 @@ public class GameDice : MonoBehaviour
     private float _hopHeight;
 
     [SerializeField]
+    private float _vanishTime;
+
+    [SerializeField]
     private DiceColorSetting[] _allColors;
+
+    public bool CanBePickedUp => _isDestroying == false;
+
+    private int _currentNum = 1;
+    private bool _isDestroying;
 
     public void Update()
     {
@@ -36,14 +44,34 @@ public class GameDice : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public bool Decay()
+    {
+        if (_currentNum == 1)
+        {
+            BlinkOutOfExistance();
+            return true;
+        }
+
+        SetNumberHop(_currentNum - 1);
+        return false;
+    }
+    
+    private void BlinkOutOfExistance()
+    {
+        _isDestroying = true;
+        transform.DOScale(0, _vanishTime).SetEase(Ease.InBack).OnComplete(() => Destroy(gameObject));
+    }
+
     public void SetNumberHop(int num)
     {
+        _currentNum = num;
         transform.DOJump(transform.position, _hopHeight, 1, _hopTime);
-        transform.DORotate(_rotations[num-1], _hopTime);
+        transform.DOLocalRotate(_rotations[num-1], _hopTime);
     }
 
     public void SetNumber(int num)
     {
+        _currentNum = num;
         Quaternion targetRotation = Quaternion.Euler(_rotations[num-1]);
         transform.localRotation = targetRotation;
     }

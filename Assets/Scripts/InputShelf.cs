@@ -24,6 +24,9 @@ public class InputShelf : MonoBehaviour
     [SerializeField]
     private float _spawnDelay;
 
+    [SerializeField]
+    private float _destroyWaitTime;
+
     private int ShelfWidth => _diceSlots == null ? 0 : _diceSlots.Length;
 
     public void SetShelfWidth(int width)
@@ -35,18 +38,35 @@ public class InputShelf : MonoBehaviour
     public void RefillDice(LevelConfig levelData)
     {
         int delayCount = 0;
+        float refillDelay = 0;
+
+        for (int i=0; i<ShelfWidth; i++)
+        {
+            if (_diceSlots[i] != null)
+            {
+                bool didDestroy = _diceSlots[i].Decay();
+
+                if (didDestroy)
+                {
+                    _diceSlots[i] = null;
+                }
+
+                refillDelay = _destroyWaitTime;
+            }
+        }
 
         for (int i=0; i<ShelfWidth; i++)
         {
             if (_diceSlots[i] != null)
                 continue;
-
-            SpawnSingleDie(levelData, i, delayCount);
+            
+            float delay = (delayCount * _spawnDelay) + refillDelay;
+            SpawnSingleDie(levelData, i, delay);
             delayCount ++;
         }
     }
 
-    public void SpawnSingleDie(LevelConfig levelData, int slotNum, int delayNum)
+    public void SpawnSingleDie(LevelConfig levelData, int slotNum, float delayAmount)
     {
         DiceColor color = levelData.GetRandomColor();
         int value = levelData.GetRandomNumber();
@@ -62,7 +82,7 @@ public class InputShelf : MonoBehaviour
         dice.transform.localPosition = finalPos + Vector3.up;
         dice.transform.localScale = Vector3.zero;
 
-        dice.transform.DOScale(finalScale, _spawnInTime).SetEase(Ease.OutExpo).SetDelay(_spawnDelay * delayNum);
-        dice.transform.DOLocalMove(finalPos, _spawnInTime).SetEase(Ease.OutBounce).SetDelay(_spawnDelay * delayNum);
+        dice.transform.DOScale(finalScale, _spawnInTime).SetEase(Ease.OutExpo).SetDelay(delayAmount);
+        dice.transform.DOLocalMove(finalPos, _spawnInTime).SetEase(Ease.OutBounce).SetDelay(delayAmount);
     }
 }

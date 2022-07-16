@@ -213,3 +213,4 @@ MonoBehaviour:
   _diceSlots: []
   _spawnInTime: 0.7
   _spawnDelay: 0.09
+  _destroyWaitTime: 0.6
