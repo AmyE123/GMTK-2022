@@ -32,7 +32,7 @@ public class GameDice : PickupObject
     protected override void Update()
     {
         base.Update();
-        
+
         if (Input.GetKeyDown(KeyCode.Alpha1)) SetNumberHop(1);
         if (Input.GetKeyDown(KeyCode.Alpha2)) SetNumberHop(2);
         if (Input.GetKeyDown(KeyCode.Alpha3)) SetNumberHop(3);
@@ -40,6 +40,7 @@ public class GameDice : PickupObject
         if (Input.GetKeyDown(KeyCode.Alpha5)) SetNumberHop(5);
         if (Input.GetKeyDown(KeyCode.Alpha6)) SetNumberHop(6);
     }
+
 
     public void OnMouseDown()
     {

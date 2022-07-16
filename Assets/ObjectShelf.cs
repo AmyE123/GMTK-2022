@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectShelf : MonoBehaviour
+public class ObjectShelf : PickupHolder
 {
     [SerializeField]
     private List<Transform> _putDownPoints;
@@ -16,6 +16,18 @@ public class ObjectShelf : MonoBehaviour
         _putDownObjects = new PickupObject[_putDownPoints.Count];
     }
 
+    public override void RemovePickup(PickupObject obj)
+    {
+        for (int i=0; i<_putDownObjects.Length; i++)
+        {
+            if (obj == _putDownObjects[i])
+            {
+                Debug.Log("YOSSSS");
+                _putDownObjects[i] = null;
+            }
+        }
+    }
+
     public bool PutDownObject(PickupObject obj)
     {
         for (int i=0; i<_putDownPoints.Count; i++)
@@ -28,6 +40,7 @@ public class ObjectShelf : MonoBehaviour
             obj.SetToFollow(_putDownPoints[i]);
             obj.GetComponent<BoxCollider>().enabled = true;
             _putDownObjects[i] = obj;
+            obj.SetHolder(this);
             return true;
         }
 

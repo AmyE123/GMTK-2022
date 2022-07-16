@@ -81,6 +81,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     {
         var pickupTransform = _pickupPoints[_NumberOfPickedUpDice].transform;
         _pickedUpObjects.Add(obj);
+        obj.GetPickedUp();
         obj.SetToFollow(pickupTransform);
         obj.GetComponent<BoxCollider>().enabled = false;
         _inRangePickups.Remove(obj);

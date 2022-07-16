@@ -6,6 +6,9 @@ public class PickupObject : MonoBehaviour
 
     [SerializeField]
     private Transform _toFollow;
+    
+    [SerializeField]
+    private PickupHolder _currentHolder;
 
     public void SetToFollow(Transform toFollow)
     {
@@ -16,5 +19,15 @@ public class PickupObject : MonoBehaviour
     {
         if (_toFollow != null)
             transform.position = _toFollow.position;
+    }
+
+    public void GetPickedUp()
+    {
+        _currentHolder?.RemovePickup(this);
+    }
+
+    public void SetHolder(PickupHolder holder)
+    {
+        _currentHolder = holder;
     }
 }

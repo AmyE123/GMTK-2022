@@ -4,7 +4,7 @@ using UnityEngine;
 using GameData;
 using DG.Tweening;
 
-public class InputShelf : MonoBehaviour
+public class InputShelf : PickupHolder
 {
     [SerializeField]
     private Transform _diceParent;
@@ -28,6 +28,18 @@ public class InputShelf : MonoBehaviour
     private float _destroyWaitTime;
 
     private int ShelfWidth => _diceSlots == null ? 0 : _diceSlots.Length;
+
+    public override void RemovePickup(PickupObject obj)
+    {
+        for (int i=0; i<_diceSlots.Length; i++)
+        {
+            if (obj == _diceSlots[i])
+            {
+                Debug.Log("YEASSS");
+                _diceSlots[i] = null;
+            }
+        }
+    }
 
     public void SetShelfWidth(int width)
     {
@@ -73,6 +85,7 @@ public class InputShelf : MonoBehaviour
 
         GameObject newObj = Instantiate(_dicePrefab, _diceParent);
         GameDice dice = newObj.GetComponent<GameDice>();
+        dice.SetHolder(this);
         dice.SetColorAndValue(color, value);
 
         _diceSlots[slotNum] = dice;
