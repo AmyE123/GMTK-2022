@@ -26,6 +26,13 @@ namespace GameData
         [SerializeField]
         private int _diceSpawnTime;
 
+        [Header("People coming in to make orders")]
+        [SerializeField]
+        private int _orderSpawnTime;
+
+        [SerializeField]
+        private int _maxOrders;
+
         [Header("Oven information")]
         [SerializeField]
         private int _ovenCount;
@@ -48,6 +55,8 @@ namespace GameData
         public int ShelfSpace => _shelfSpace;
         public int TotalLevelTime => _totalLevelTime;
         public int HappinessRequirement => _happinessRequirement;
+        public int OrderSpawnTime => _orderSpawnTime;
+        public int MaxOrders => _maxOrders;
 
         public IEnumerable<Recipe> AllRecipies
         {
@@ -61,7 +70,7 @@ namespace GameData
         }
 
         public DiceColor GetRandomColor() => GetRandomValue(_potentialColors);
-        public Recipe GetRandomReceipe() => GetRandomValue(_potentialRecipes);
+        public Recipe GetRandomRecipe() => GetRandomValue(_potentialRecipes);
         public int GetRandomNumber() => GetRandomValue(_potentialNumbers);
 
         private T GetRandomValue<T>(GenericOdds<T>[] oddsList)

@@ -31,6 +31,8 @@ MonoBehaviour:
     _weight: 1
   _maxDice: 5
   _diceSpawnTime: 20
+  _orderSpawnTime: 5
+  _maxOrders: 3
   _ovenCount: 1
   _shelfSpace: 2
   _totalLevelTime: 90
