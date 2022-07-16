@@ -1,6 +1,7 @@
 # gmtk-2022
 
 ## TODO
+* error messages when putting food into oven?
 * Food expiring
     * shown with steam
 * Exchanging food for points
