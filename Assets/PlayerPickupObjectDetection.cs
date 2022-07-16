@@ -6,9 +6,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 {
     private bool _IsFacingDice => _inRangePickups.Count > 0;
     private bool _IsFacingShelf => _inRangeShelves.Count > 0;
+    private bool _IsFacingOven => _inRangeOvens.Count > 0;
 
     [SerializeField] private List<PickupObject> _inRangePickups;
     [SerializeField] private List<ObjectShelf> _inRangeShelves;
+    [SerializeField] private List<Oven> _inRangeOvens;
 
     [SerializeField] private List<PickupObject> _pickedUpObjects;
     [SerializeField] private List<Transform> _pickupPoints;
@@ -16,6 +18,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     private int _NumberOfPickedUpDice => _pickedUpObjects.Count;
     private PickupObject _ClosestPickup => GetClosest(_inRangePickups);
     private ObjectShelf _ClosestShelf => GetClosest(_inRangeShelves);
+    private Oven _ClosestOven => GetClosest(_inRangeOvens);
 
     [SerializeField]
     private string _contextualAction = "???";
@@ -65,11 +68,25 @@ public class PlayerPickupObjectDetection : MonoBehaviour
             PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
 
             _contextualAction = "put down";
-            _contextualTarget = topHeldItem.transform; // yes this is wasteful but gamejam
+            _contextualTarget = topHeldItem.transform;
 
             if (Input.GetKeyDown(KeyCode.E))
             {
                 PutDownObject(topHeldItem);  
+            }
+        }
+        else if (_IsFacingOven && isHoldingStuff)
+        {
+            PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
+
+            _contextualAction = "bake";
+            _contextualTarget = topHeldItem.transform;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                // Ask _ClosestOven if it's already full
+                // Ask _ClosestOven if this is a valid combination
+                // put everything into _ClosestOven if we're good
             }
         }
         else
@@ -111,6 +128,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         {
             _inRangeShelves.Add(other.GetComponent<ObjectShelf>());
         }
+
+        if (other.transform.tag == "Oven")
+        {
+            _inRangeOvens.Add(other.GetComponent<Oven>());
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -123,6 +145,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         if (other.transform.tag == "Shelf")
         {
             _inRangeShelves.Remove(other.GetComponent<ObjectShelf>());
+        }
+
+        if (other.transform.tag == "Oven")
+        {
+            _inRangeOvens.Remove(other.GetComponent<Oven>());
         }
     }
 }
