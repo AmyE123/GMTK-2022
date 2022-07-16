@@ -7,9 +7,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     private bool _IsFacingDice => _inRangePickups.Count > 0;
     private bool _IsFacingShelf => _inRangeShelves.Count > 0;
     private bool _IsFacingOven => _inRangeOvens.Count > 0;
+    private bool _IsFacingOutput => _inRangeOutputs.Count > 0;
 
     [SerializeField] private List<PickupObject> _inRangePickups;
     [SerializeField] private List<ObjectShelf> _inRangeShelves;
+    [SerializeField] private List<OutputShelf> _inRangeOutputs;
     [SerializeField] private List<Oven> _inRangeOvens;
 
     [SerializeField] private List<PickupObject> _pickedUpObjects;
@@ -19,6 +21,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     private PickupObject _ClosestPickup => GetClosest(_inRangePickups);
     private ObjectShelf _ClosestShelf => GetClosest(_inRangeShelves);
     private Oven _ClosestOven => GetClosest(_inRangeOvens);
+    private OutputShelf _ClosestOutput => GetClosest(_inRangeOutputs);
 
     [SerializeField]
     private string _contextualAction = "???";
@@ -89,6 +92,13 @@ public class PlayerPickupObjectDetection : MonoBehaviour
                 // put everything into _ClosestOven if we're good
             }
         }
+        else if (_IsFacingOutput && isHoldingStuff)
+        {
+            PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
+
+            _contextualAction = "deliver";
+            _contextualTarget = topHeldItem.transform;
+        }
         else
         {
             _contextualAction = "";
@@ -133,6 +143,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         {
             _inRangeOvens.Add(other.GetComponent<Oven>());
         }
+
+        if (other.transform.tag == "Output")
+        {
+            _inRangeOutputs.Add(other.GetComponent<OutputShelf>());
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -150,6 +165,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         if (other.transform.tag == "Oven")
         {
             _inRangeOvens.Remove(other.GetComponent<Oven>());
+        }
+
+        if (other.transform.tag == "Output")
+        {
+            _inRangeOutputs.Remove(other.GetComponent<OutputShelf>());
         }
     }
 }

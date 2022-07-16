@@ -33,6 +33,10 @@ public class OutputShelf : MonoBehaviour
     {
         _meshParent.localScale = new Vector3(width * _socialDistancing, 1, 1);
         _customerSlots = new Customer[width];
+
+        BoxCollider collider = GetComponent<BoxCollider>();
+        collider.center = new Vector3(width * _socialDistancing * -0.5f, 1, 0.5f);
+        collider.size = new Vector3(width * _socialDistancing, 2, 1);
     }
 
     public bool SpawnRandomNewCustomer(LevelConfig levelData)
