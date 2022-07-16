@@ -29,8 +29,10 @@ public class GameDice : PickupObject
     private int _currentNum = 1;
     private bool _isDestroying;
 
-    public void Update()
+    protected override void Update()
     {
+        base.Update();
+        
         if (Input.GetKeyDown(KeyCode.Alpha1)) SetNumberHop(1);
         if (Input.GetKeyDown(KeyCode.Alpha2)) SetNumberHop(2);
         if (Input.GetKeyDown(KeyCode.Alpha3)) SetNumberHop(3);

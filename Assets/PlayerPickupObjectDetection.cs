@@ -4,70 +4,107 @@ using UnityEngine;
 
 public class PlayerPickupObjectDetection : MonoBehaviour
 {
-    [SerializeField] private bool _isWithinRange = false;
-    [SerializeField] private bool _isNearShelf = false;
+    private bool _IsFacingDice => _inRangePickups.Count > 0;
+    private bool _IsFacingShelf => _inRangeShelves.Count > 0;
 
-    [SerializeField] private List<PickupObject> _objectTransforms;
-    [SerializeField] private List<PickupObject> _pickedUpDice;
+    [SerializeField] private List<PickupObject> _inRangePickups;
+    [SerializeField] private List<ObjectShelf> _inRangeShelves;
+
+    [SerializeField] private List<PickupObject> _pickedUpObjects;
     [SerializeField] private List<Transform> _pickupPoints;
-    [SerializeField] private int _numberOfPickedUpDice;
-    [SerializeField] private int _shelfIdx;
 
-    [SerializeField] private ObjectShelf _objectShelf;
+    private int _NumberOfPickedUpDice => _pickedUpObjects.Count;
+    private PickupObject _ClosestPickup => GetClosest(_inRangePickups);
+    private ObjectShelf _ClosestShelf => GetClosest(_inRangeShelves);
+
+    [SerializeField]
+    private string _contextualAction = "???";
+    [SerializeField]
+    private Transform _contextualTarget;
+
+    // Generic function that can be used on any type of GameObject
+    private T GetClosest<T>(List<T> inList) where T: MonoBehaviour
+    {
+        float bestDist = 9999;
+        T closest = null;
+
+        foreach (T obj in inList)
+        {
+            float thisDist = Vector3.Distance(obj.transform.position, transform.position);
+
+            if (thisDist > bestDist)
+                continue;
+
+            bestDist = thisDist;
+            closest = obj;
+        }
+
+        return closest;
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (_isWithinRange && _numberOfPickedUpDice < 3 && !_isNearShelf)
-            {                
-                PickUpObject(_objectTransforms[0].transform);
-                _objectTransforms[0].IsPickedup = true;               
-                _objectTransforms.RemoveAt(0);
-                _numberOfPickedUpDice ++;
-            }
+        bool isHoldingStuff = _NumberOfPickedUpDice > 0;
+        bool areHandsFull = _NumberOfPickedUpDice >= 3;
 
-            if (_isNearShelf)
-            {
-                PutDownObject(_pickedUpDice[_numberOfPickedUpDice - 1].transform);
-                _numberOfPickedUpDice--;               
+        if (_IsFacingDice && areHandsFull == false)
+        {
+            _contextualAction = "pick up";
+            _contextualTarget = _ClosestPickup.transform; // yes this is wasteful but gamejam
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {             
+                PickUpObject(_ClosestPickup);         
             }
         }
+        else if (_IsFacingShelf && isHoldingStuff)
+        {
+            _contextualAction = "put down";
+            _contextualTarget = _ClosestShelf.transform; // yes this is wasteful but gamejam
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
+                PutDownObject(topHeldItem);  
+            }
+        }
+        else
+        {
+            _contextualAction = "";
+            _contextualTarget = null;
+        }
+
+
     }
 
-    private void PickUpObject(Transform obj)
+    private void PickUpObject(PickupObject obj)
     {
-        _pickedUpDice.Add(_objectTransforms[0]);
-        var pickupTransform = _pickupPoints[_numberOfPickedUpDice].transform;
-        obj.parent = pickupTransform;
-        obj.transform.position = pickupTransform.position;
-        obj.transform.rotation = pickupTransform.rotation;
+        var pickupTransform = _pickupPoints[_NumberOfPickedUpDice].transform;
+        _pickedUpObjects.Add(obj);
+        obj.SetToFollow(pickupTransform);
         obj.GetComponent<BoxCollider>().enabled = false;
+        _inRangePickups.Remove(obj);
     }
 
-    private void PutDownObject(Transform obj)
+    private void PutDownObject(PickupObject obj)
     {        
-        _pickedUpDice.Remove(_pickedUpDice[_numberOfPickedUpDice - 1]);
-        var putDownTransform = _objectShelf.PutDownPoints[_shelfIdx].transform;
-        obj.parent = putDownTransform;
-        obj.transform.position = putDownTransform.position;
-        obj.transform.rotation = putDownTransform.rotation;
-        obj.GetComponent<BoxCollider>().enabled = false;
-        _shelfIdx++;
+        bool didPutDown = _ClosestShelf.PutDownObject(obj);
+        if (didPutDown)
+        {
+            _pickedUpObjects.Remove(obj);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Pickup")
         {
-            _isWithinRange = true;
-            _objectTransforms.Add(other.GetComponent<PickupObject>());
+            _inRangePickups.Add(other.GetComponent<PickupObject>());
         }
 
         if (other.transform.tag == "Shelf")
         {
-            _isNearShelf = true;
-            _objectTransforms.Add(other.GetComponent<PickupObject>());
+            _inRangeShelves.Add(other.GetComponent<ObjectShelf>());
         }
     }
 
@@ -75,14 +112,12 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     {
         if (other.transform.tag == "Pickup")
         {
-            _isWithinRange = false;
-            _objectTransforms.Remove(other.GetComponent<PickupObject>());
+            _inRangePickups.Remove(other.GetComponent<PickupObject>());
         }
 
         if (other.transform.tag == "Shelf")
         {
-            _isNearShelf = false;
-            _objectTransforms.Remove(other.GetComponent<PickupObject>());
+            _inRangeShelves.Remove(other.GetComponent<ObjectShelf>());
         }
     }
 }
