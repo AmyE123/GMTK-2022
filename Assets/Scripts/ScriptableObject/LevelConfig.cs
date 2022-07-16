@@ -19,20 +19,27 @@ namespace GameData
         [SerializeField]
         private RecipeOdds[] _potentialRecipes;
 
+        [Header("The input dice shelf")]
         [SerializeField]
         private int _maxDice;
 
         [SerializeField]
         private int _diceSpawnTime;
 
+        [Header("Oven information")]
         [SerializeField]
         private int _ovenCount;
 
+        [Header("For temporary storage")]
         [SerializeField]
         private int _shelfSpace;
 
+        [Header("Win/Lose conditions")]
         [SerializeField]
         private int _totalLevelTime;
+
+        [SerializeField]
+        private int _happinessRequirement;
 
         public string Description => _description;
         public int RefillTime => _diceSpawnTime;
@@ -40,6 +47,7 @@ namespace GameData
         public int OvenCount => _ovenCount;
         public int ShelfSpace => _shelfSpace;
         public int TotalLevelTime => _totalLevelTime;
+        public int HappinessRequirement => _happinessRequirement;
 
         public DiceColor GetRandomColor() => GetRandomValue(_potentialColors);
         public Recipe GetRandomReceipe() => GetRandomValue(_potentialRecipes);

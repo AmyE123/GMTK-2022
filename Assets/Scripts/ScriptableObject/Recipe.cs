@@ -16,10 +16,15 @@ namespace GameData
         [SerializeField]
         private int _bakeTime;
 
+        [SerializeField]
+        private int _baseHappinessPoints;
+
         public int BakeTime => _bakeTime;
 
         public IEnumerable<DiceColor> Colors => _requiredColors;
 
         public IEnumerable<int> Numbers => _requiredNumbers;
+
+        public int BasePoints => _baseHappinessPoints;
     }
 }
