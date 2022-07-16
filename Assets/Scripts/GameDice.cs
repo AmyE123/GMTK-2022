@@ -4,7 +4,7 @@ using UnityEngine;
 using GameData;
 using DG.Tweening;
 
-public class GameDice : MonoBehaviour
+public class GameDice : PickupObject
 {
     [SerializeField]
     private Vector3[] _rotations;
