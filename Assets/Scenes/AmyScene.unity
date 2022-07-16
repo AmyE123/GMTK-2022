@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transform: {fileID: 166165633}
   _speed: 5
+  _rotationSpeed: 10
   _characterController: {fileID: 166165635}
 --- !u!143 &166165635
 CharacterController:
