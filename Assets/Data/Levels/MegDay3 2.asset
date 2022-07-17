@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: MegDay3 2
   m_EditorClassIdentifier: 
   _levelName: Day 4
-  _description: The Dice family have just open their bakery, and are trying to entice
-    their first customers
+  _description: '"if only we had just one more day" they think to themselves'
   _potentialColors:
   - _value: 0
     _weight: 11

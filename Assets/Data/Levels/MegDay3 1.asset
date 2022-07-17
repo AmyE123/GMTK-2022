@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: MegDay3 1
   m_EditorClassIdentifier: 
   _levelName: Day 5
-  _description: The Dice family have just open their bakery, and are trying to entice
-    their first customers
+  _description: but it's too late for that, so they scramble together what they have
   _potentialColors:
   - _value: 0
     _weight: 10
@@ -87,7 +86,7 @@ MonoBehaviour:
   - _value: {fileID: 11400000, guid: 8a57e915fb79c0e45973d807f99973a5, type: 2}
     _weight: 1
   _maxDice: 5
-  _diceSpawnTime: 30
+  _diceSpawnTime: 20
   _orderSpawnTime: 6
   _maxOrders: 3
   _ovenCount: 2

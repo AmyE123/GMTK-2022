@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: MegDay6
   m_EditorClassIdentifier: 
   _levelName: Day 6
-  _description: The Dice family have just open their bakery, and are trying to entice
-    their first customers
+  _description: if you've got this far, hats off to you
   _potentialColors:
   - _value: 0
     _weight: 1
