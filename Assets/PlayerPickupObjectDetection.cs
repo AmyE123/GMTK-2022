@@ -1,3 +1,4 @@
+using GameData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -87,6 +88,28 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                var ovn = _ClosestOven;
+
+                List<GameDice> gameDice = new List<GameDice>();
+
+                foreach (PickupObject obj in _pickedUpObjects)
+                {
+                    if (obj is GameDice)
+                    {
+                        gameDice.Add(obj as GameDice);
+                    }
+                }
+
+                bool didSucceed = ovn.GiveDice(gameDice);
+
+                if (didSucceed)
+                {
+                    foreach(GameDice dice in gameDice)
+                    {
+                        Destroy(dice.gameObject);
+                        _pickedUpObjects.Remove(dice);
+                    }
+                }
                 // Ask _ClosestOven if it's already full
                 // Ask _ClosestOven if this is a valid combination
                 // put everything into _ClosestOven if we're good
