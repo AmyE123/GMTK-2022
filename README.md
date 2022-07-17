@@ -45,3 +45,13 @@
 * Title screen
 * level select
 * truck UI for next delivery
+* restart level
+* pause
+* transition manager
+
+### BUGS
+* It's possible to pick up a dice as it's disappearing and this causes errors
+
+### DEBUG CLEANUP
+* remove clicking on dice to kill
+* remove inputtnig number keys to change values
