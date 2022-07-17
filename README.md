@@ -19,7 +19,6 @@
 
 ### CORE FUNCTIONALITY
 * Exchanging food for points
-* loading a level from playerprefs or something
 * lose screen
 * happiness counter
 * Make sure you can't put finished items into the oven
@@ -51,3 +50,4 @@
 ### BUGS
 * picking up more stuff from ovens should be possible
 * lock the players position Y
+* stop ovens bouncing

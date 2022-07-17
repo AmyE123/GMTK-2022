@@ -47,9 +47,6 @@ public class OvenController : MonoBehaviour
 
         _ovenSlots[slotNum] = oven;
 
-        oven.transform.localPosition = finalPos + new Vector3(0, -3, 0);
-
-        oven.transform.DOScale(finalScale, _spawnInTime).SetEase(Ease.OutExpo);
-        oven.transform.DOLocalMove(finalPos, _spawnInTime).SetEase(Ease.OutBack);
+        oven.transform.localPosition = finalPos;
     }
 }
