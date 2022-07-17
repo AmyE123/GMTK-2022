@@ -10,11 +10,25 @@ public class Oven : MonoBehaviour
     private float _timeLeft;
 
     [SerializeField]
+    private GameObject _uiPrefab;
+
+    [SerializeField]
     private GameObject _finishedFoodPrefab;
 
     public bool HasItemReady => _currentItem != null && _timeLeft <= 0;
 
     public bool IsBaking => _currentItem != null && _timeLeft > 0;
+
+    public bool IsEmpty => _currentItem == null;
+
+    public Recipe CurrentItem => _currentItem;
+
+    public float BakePercent => 1 - Mathf.Clamp01(_timeLeft / _currentItem.BakeTime);
+
+    void Start()
+    {
+        W2C.InstantiateAs<OvenTimer>(_uiPrefab).Init(this);
+    }
 
     public void Update()
     {
