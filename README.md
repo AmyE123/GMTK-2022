@@ -25,30 +25,24 @@
 * Exchanging food for points
 * Time limits
 * loading a level from playerprefs or something
-* the bin
-* win screen
 * lose screen
 * happiness counter
 * Make sure you can't put finished items into the oven
-* Make the shelf customisable size on startup
 * Game pause should stop timers going down
 * game pause and game over should stop player moving
 * put down things back onto belt
 
-### ARTWORK
-* Oven
-* Textures for floor
-
 ### COSMETIC
-* tweens/animations for picking up items/ putting down
-* also show icons requested on counter
 * Dice should appear on oven
 * visuals for oven in progress
-* Background pattern
+* Music
+* sound effects
 
 ### NICE TO HAVE
 * put down in closest slot on shelf not first available
 * recipies over people
+* tweens/animations for picking up items/ putting down
+* also show icons requested on counter
 
 ### UI AND MENUS
 * Title screen
@@ -61,7 +55,3 @@
 ### BUGS
 * It's possible to pick up a dice as it's disappearing and this causes errors
 * picking up more stuff from ovens should be possible
-
-### DEBUG CLEANUP
-* remove clicking on dice to kill
-* remove inputtnig number keys to change values
