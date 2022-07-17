@@ -34,6 +34,8 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     public string ContextualAction => _contextualAction;
     public Transform ContextualTarget => _contextualTarget;
 
+    public bool IsHoldingSomething => _pickedUpObjects.Count > 0;
+
     // Generic function that can be used on any type of GameObject
     private T GetClosest<T>(List<T> inList) where T: MonoBehaviour
     {

@@ -34,7 +34,6 @@
 
 ### COSMETIC
 * tweens/animations for picking up items/ putting down
-* move animations
 * also show icons requested on counter
 * Dice should appear on oven
 * visuals for oven in progress
