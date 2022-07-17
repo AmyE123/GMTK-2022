@@ -7,6 +7,9 @@ namespace GameData
     [CreateAssetMenu(menuName="Data/Level")]
     public class LevelConfig : ScriptableObject
     {
+        [SerializeField]
+        private string _levelName = "day ???";
+
         [SerializeField, TextArea(minLines:1, maxLines:10)]
         private string _description;
 
@@ -48,6 +51,7 @@ namespace GameData
         [SerializeField]
         private int _happinessRequirement;
 
+        public string LevelName => _levelName;
         public string Description => _description;
         public int RefillTime => _diceSpawnTime;
         public int MaxDice => _maxDice;

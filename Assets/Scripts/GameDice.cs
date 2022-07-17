@@ -38,12 +38,6 @@ public class GameDice : PickupObject
         base.Update();
     }
 
-
-    public void OnMouseDown()
-    {
-        Destroy(gameObject);
-    }
-
     public bool Decay()
     {
         if (_currentNum == 1)

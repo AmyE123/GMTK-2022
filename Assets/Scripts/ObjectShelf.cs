@@ -4,16 +4,35 @@ using UnityEngine;
 public class ObjectShelf : PickupHolder
 {
     [SerializeField]
-    private List<Transform> _putDownPoints;
+    private Transform[] _putDownPoints;
 
     [SerializeField]
     private PickupObject[] _putDownObjects;
 
-    public List<Transform> PutDownPoints => _putDownPoints;
+    [SerializeField]
+    private Transform _scalableSurface;
+
+    public Transform[] PutDownPoints => _putDownPoints;
 
     private void Start()
     {
-        _putDownObjects = new PickupObject[_putDownPoints.Count];
+        //_putDownObjects = new PickupObject[_putDownPoints.Count];
+    }
+
+    public void SetWidth(int width)
+    {
+        _scalableSurface.localScale = new Vector3(width, 1, 1);
+        _putDownObjects = new PickupObject[width];
+        _putDownPoints = new Transform[width];
+
+        for (int i = 0; i < width; i++)
+        {
+            GameObject newObj = new GameObject("PutDownPoint");
+            newObj.transform.SetParent(transform);
+            Vector3 startPos = transform.position + new Vector3((width - 1) * -0.5f, 0, 0);
+            newObj.transform.position = new Vector3(i, 1, 0) + startPos;
+            PutDownPoints[i] = newObj.transform;
+        }
     }
 
     public override void RemovePickup(PickupObject obj)
@@ -30,7 +49,7 @@ public class ObjectShelf : PickupHolder
 
     public bool PutDownObject(PickupObject obj)
     {
-        for (int i=0; i<_putDownPoints.Count; i++)
+        for (int i=0; i<_putDownPoints.Length; i++)
         {
             bool isSpaceFree = _putDownObjects[i] == null;
 

@@ -196,6 +196,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     private void PutDownObject(PickupObject obj)
     {        
         bool didPutDown = _ClosestShelf.PutDownObject(obj);
+        
         if (didPutDown)
         {
             _pickedUpObjects.Remove(obj);

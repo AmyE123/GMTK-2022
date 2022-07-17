@@ -20,6 +20,8 @@ public class FinishedFood : PickupObject
 
     public Recipe Recipe => _recipe;
 
+    public float Freshness => _freshness;
+
     public void SetRecipe(Recipe rec)
     {
         _recipe = rec;
