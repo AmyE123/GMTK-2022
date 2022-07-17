@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameData;
+using DG.Tweening;
 
 public class RecipeUI : MonoBehaviour
 {
@@ -17,14 +18,24 @@ public class RecipeUI : MonoBehaviour
 
     [SerializeField]
     private RectTransform _requirementParent;
+
+    [SerializeField]
+    LayoutElement _layoutElement;
     
     private Recipe _recipe;
     private Customer _customer;
+    private OrderList _parentUI;
+
+    public void SetParentUI(OrderList ui)
+    {
+        _parentUI = ui;
+    }
 
     public void SetCustomer(Customer customer)
     {
         _recipe = customer.RecipeRequest;
         _checkmarkRect.gameObject.SetActive(false);
+        _icon.sprite = _recipe.Icon;
 
         foreach (DiceColor col in _recipe.Colors)
         {
@@ -57,6 +68,14 @@ public class RecipeUI : MonoBehaviour
 
     public void OnCompleted()
     {
-        // TODO make disappear
+        float ht = _layoutElement.preferredHeight;
+        _layoutElement.DOPreferredSize(new Vector2(0, ht), 1f).SetEase(Ease.InQuad);
+        transform.DOScale(0, 1f).SetEase(Ease.InQuad).OnComplete(() => DestroySelf());
+    }
+
+    private void DestroySelf()
+    {
+        Destroy(gameObject);
+        _parentUI.UIRemoved(this);
     }
 }

@@ -32,9 +32,6 @@
 * Make sure you can't put finished items into the oven
 * Make the shelf customisable size on startup
 
-### ORDER SYSTEM
-* make orders disappear
-
 ### COSMETIC
 * tweens/animations for picking up items/ putting down
 * move animations

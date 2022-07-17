@@ -22,11 +22,17 @@ public class OrderList : MonoBehaviour
         _level = lvl;
     }
 
+    public void UIRemoved(RecipeUI ui)
+    {
+        _childUI.Remove(ui);
+    }
+
     public RecipeUI AddOrder(Customer customer)
     {
         GameObject newObj = Instantiate(_iconPrefab, _parentRect);
         RecipeUI newUI = newObj.GetComponent<RecipeUI>();
         newUI.SetCustomer(customer);
+        newUI.SetParentUI(this);
         _childUI.Add(newUI);
         
         if (_lastKnownPickups != null)

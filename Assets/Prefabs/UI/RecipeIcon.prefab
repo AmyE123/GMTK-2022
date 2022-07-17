@@ -164,7 +164,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 07b83a29b6c23b14f9ead0627cb33fea, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 72
+  m_PreferredWidth: 84
   m_PreferredHeight: 72
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -204,11 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bccb1e7038f9924182cf6013c9de964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 8897887509998281050}
   _requirementPrefab: {fileID: 6233271400423722711, guid: 328c83a7e18af9742909926cb04484db,
     type: 3}
   _checkmarkRect: {fileID: 3014589016878866441}
   _requirementParent: {fileID: 8897887510314042330}
+  _layoutElement: {fileID: 8897887509998281053}
 --- !u!1 &8897887510314042333
 GameObject:
   m_ObjectHideFlags: 0
