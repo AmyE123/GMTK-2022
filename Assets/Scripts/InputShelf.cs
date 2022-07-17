@@ -27,6 +27,8 @@ public class InputShelf : PickupHolder
     [SerializeField]
     private float _destroyWaitTime;
 
+    private Queue<Recipe.DiceColorNumberCombo> _tutorialQueue;
+
     private int ShelfWidth => _diceSlots == null ? 0 : _diceSlots.Length;
 
     public override void RemovePickup(PickupObject obj)
@@ -45,6 +47,11 @@ public class InputShelf : PickupHolder
     {
         _meshParent.localScale = new Vector3(width, 1, 1);
         _diceSlots = new GameDice[width];
+    }
+
+    public void SetTutorialQueue(IEnumerable<Recipe.DiceColorNumberCombo> inp)
+    {
+        _tutorialQueue = new Queue<Recipe.DiceColorNumberCombo>(inp);
     }
 
     public void RefillDice(LevelConfig levelData)
@@ -83,6 +90,12 @@ public class InputShelf : PickupHolder
         DiceColor color = levelData.GetRandomColor();
         int value = levelData.GetRandomNumber();
 
+        if (_tutorialQueue.Count > 0)
+        {
+            var combo = _tutorialQueue.Dequeue();
+            color = combo.color;
+            value = combo.number;
+        }
         GameObject newObj = Instantiate(_dicePrefab, _diceParent);
         GameDice dice = newObj.GetComponent<GameDice>();
         dice.SetHolder(this);

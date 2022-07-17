@@ -33,6 +33,9 @@ public class OutputShelf : MonoBehaviour
     [SerializeField]
     private LevelController _levelManager;
 
+    private Queue<Recipe> _tutorialQueue;
+
+
     private int ShelfWidth => _customerSlots == null ? 0 : _customerSlots.Length;
 
     public IEnumerable<Customer> CustomersInOrderTheyCame => _customersInOrderTheyCame;
@@ -61,6 +64,11 @@ public class OutputShelf : MonoBehaviour
         customer.TakeCompletedGoods();
     }
 
+    public void SetTutorialQueue(IEnumerable<Recipe> inp)
+    {
+        _tutorialQueue = new Queue<Recipe>(inp);
+    }
+
     public void SetShelfWidth(int width)
     {
         _meshParent.localScale = new Vector3(width * _socialDistancing, 1, 1);
@@ -79,6 +87,10 @@ public class OutputShelf : MonoBehaviour
                 continue;
             
             Recipe product = levelData.GetRandomRecipe();
+            
+            if (_tutorialQueue.Count > 0)
+                product = _tutorialQueue.Dequeue();
+            
             SpawnSingleCustomer(product, i);
             return true;
         }

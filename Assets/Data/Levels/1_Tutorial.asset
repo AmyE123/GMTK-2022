@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde77b43644df674997f1d3354363ada, type: 3}
   m_Name: 1_Tutorial
   m_EditorClassIdentifier: 
+  _levelName: day ???
   _description: The Dice family have just open their bakery, and are trying to entice
     their first customers
   _potentialColors:
@@ -37,3 +38,21 @@ MonoBehaviour:
   _shelfSpace: 5
   _totalLevelTime: 90
   _happinessRequirement: 0
+  _tutorialDiceQueue:
+  - number: 1
+    color: 1
+  - number: 2
+    color: 2
+  - number: 3
+    color: 3
+  - number: 4
+    color: 0
+  - number: 5
+    color: 1
+  - number: 6
+    color: 2
+  _tutorialRequestQueue:
+  - {fileID: 11400000, guid: 078ef7e720a3cf742961f3392994df91, type: 2}
+  - {fileID: 11400000, guid: 9df51ed0cbd69a346b99f96965458669, type: 2}
+  - {fileID: 11400000, guid: 078ef7e720a3cf742961f3392994df91, type: 2}
+  - {fileID: 11400000, guid: 9df51ed0cbd69a346b99f96965458669, type: 2}

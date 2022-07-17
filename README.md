@@ -10,7 +10,6 @@
     * Putting dice with matching colors in
     * Waiting for next delivery of dice + any unused decay
 * Tutorial functionality
-    * specific orders
     * no decaying
 * Tutorial level with special rules...?
 
