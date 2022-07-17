@@ -87,6 +87,7 @@ public class Oven : MonoBehaviour
         if (diceList.Count != basicReq.Length)
             return false;
 
+        /* Too complicated for the player I think
         foreach (DiceRequirement[] reqList in GetPermutations(basicReq))
         {
             bool allMatch = true;
@@ -103,8 +104,20 @@ public class Oven : MonoBehaviour
             if (allMatch)
                 return true;
         }
+        */
 
-        return false;
+        bool allMatch = true;
+
+        for (int i=0; i<basicReq.Length; i++)
+        {
+            if (basicReq[i].DoesMatch(diceList[i]) == false)
+            {
+                allMatch = false;
+                break;
+            }
+        }
+
+        return allMatch;
     }
 
     private DiceRequirement[] GetRequirements(Recipe rec)

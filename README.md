@@ -39,4 +39,3 @@
 * move animations
 * also show icons requested on counter
 * make orders disappear
-* maybe don't do permutations and instead need to get them in the right order?
