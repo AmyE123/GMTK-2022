@@ -39,5 +39,12 @@
 
 ### BUGS
 * picking up more stuff from ovens should be possible
-* lock the players position Y
+* lock the players position Y - sometimes you float above everything
 * stop ovens bouncing
+* Sometimes an error occurs that means you can't pick up dice any more
+* the tutorial ends and spams orders
+
+### PACKAGES
+* Make a title screen pacakge
+* Make a transition manager package
+* Music/SFX manager package
