@@ -1,6 +1,7 @@
 using GameData;
 using System.Collections.Generic;
 using UnityEngine;
+using WorldToCanvas;
 
 public class Oven : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class Oven : MonoBehaviour
     {
         if (_currentItem != null)
         {
+            W2CManager.CreateError(transform.position, "oven in use!");
             Debug.Log("Oven is full!");
             return false;
         }
@@ -58,6 +60,7 @@ public class Oven : MonoBehaviour
 
         if (matchingRecipies.Count == 0)
         {
+            W2CManager.CreateError(transform.position, "wrong recipe!");
             Debug.Log("No matching recipes");
             return false;
         }

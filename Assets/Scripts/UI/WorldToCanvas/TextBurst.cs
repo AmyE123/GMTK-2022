@@ -20,7 +20,7 @@ public class TextBurst : W2C
         // _trackRect.localRotation = Quaternion.Euler(new Vector3(0, 0, Random.Range(-25, 25)));
 
         _text.text = text;
-        _text.DOFade(0, _vanishTime).SetDelay(_appearTime + _lifetime).OnComplete(() => Destroy(gameObject));
+        _canvasGroup.DOFade(0, _vanishTime).SetDelay(_appearTime + _lifetime).OnComplete(() => Destroy(gameObject));
         SetPosition(position);
     }
 }
