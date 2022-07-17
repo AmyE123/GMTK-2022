@@ -48,6 +48,7 @@
 
 ### NICE TO HAVE
 * put down in closest slot on shelf not first available
+* recipies over people
 
 ### UI AND MENUS
 * Title screen
