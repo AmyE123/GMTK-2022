@@ -30,6 +30,9 @@ public class OutputShelf : MonoBehaviour
     [SerializeField]
     private List<Customer> _customersInOrderTheyCame;
 
+    [SerializeField]
+    private LevelController _levelManager;
+
     private int ShelfWidth => _customerSlots == null ? 0 : _customerSlots.Length;
 
     public IEnumerable<Customer> CustomersInOrderTheyCame => _customersInOrderTheyCame;
@@ -45,6 +48,7 @@ public class OutputShelf : MonoBehaviour
 
             food.SetToFollow(c.HandTransform);
             OnCustomerComplete(c);
+            _levelManager.OnDeliveryComplete(food);
             return true;
         }
 

@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 07b83a29b6c23b14f9ead0627cb33fea, type: 3}
   _displayName: Cherry Cake
-  _requiredColors: 00000000
-  _requiredNumbers: 05000000
+  _requiredColors: 
+  _requiredNumbers: 
+  _requiredSpecificDice:
+  - number: 5
+    color: 0
   _bakeTime: 3
   _baseHappinessPoints: 1

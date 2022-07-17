@@ -29,11 +29,29 @@ public class LevelController : MonoBehaviour
     [SerializeField]
     private float _timeUntilNextCustomer;
 
+    [SerializeField]
+    private int _currentHappyPoints;
+
+    private int _deliveryCount;
+
+    [SerializeField]
+    private PlayerMovement _player;
+
+    [SerializeField]
+    private WinScreen _winScreen;
+
+    public int HappyPoints => _currentHappyPoints;
+
     public float RefillTimerPercent => _timeUntilNextRefill / _levelConfig.RefillTime;
+
+    public float LevelTimePercent => 1 - Mathf.Clamp01(_timeRemaining / _levelConfig.TotalLevelTime);
+
+    private bool _timeUp;
 
     public void Start()
     {
         _orderUI.SetLevel(_levelConfig);
+        _timeRemaining = _levelConfig.TotalLevelTime;
         _customerShelf.SetShelfWidth(_levelConfig.MaxOrders);
         _diceShelf.SetShelfWidth(_levelConfig.MaxDice);
         _ovenController.SetLevel(_levelConfig);
@@ -42,6 +60,9 @@ public class LevelController : MonoBehaviour
 
     public void Update()
     {
+        if (_timeUp)
+            return;
+
         _timeRemaining -= Time.deltaTime;
         _timeUntilNextRefill -= Time.deltaTime;
         _timeUntilNextCustomer -= Time.deltaTime;
@@ -51,6 +72,24 @@ public class LevelController : MonoBehaviour
 
         if (_timeUntilNextCustomer <= 0)
             DoNewCustomer();
+
+        if (_timeRemaining <= 0)
+            OnTimeUp();
+    }
+
+    private void OnTimeUp()
+    {
+        _timeUp = true;
+        _winScreen.EnableScreen(_deliveryCount, _currentHappyPoints);
+        _player.StopMoving();
+    }
+
+    public void OnDeliveryComplete(FinishedFood food)
+    {
+        int freshnessBonus = Mathf.Clamp(((int) food.Freshness + 1) * 5, 0, 10);
+        _currentHappyPoints += food.Recipe.BasePoints + freshnessBonus;
+        _deliveryCount ++;
+        // TODO burst and text and particles
     }
 
     public void OnPlayerHoldChanged(IEnumerable<PickupObject> currentlyHolding)
