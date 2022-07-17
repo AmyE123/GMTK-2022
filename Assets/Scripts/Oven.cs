@@ -54,6 +54,9 @@ public class Oven : MonoBehaviour
 
     public void SetPaused(bool yesno) => _paused = yesno;
 
+    public static System.Action ItemAddedEvent;
+    public static System.Action BakeCompleteEvent;
+    public static System.Action ItemRemovedEvent;
 
     void Start()
     {
@@ -95,6 +98,7 @@ public class Oven : MonoBehaviour
         Debug.Log($"Finished baking: {_currentItem.name}");
         // play some animation perhaps?
         _audioSource.PlayOneShot(_ovenFinishedSFX);
+        BakeCompleteEvent?.Invoke();
     }
 
     public FinishedFood TakeOutItem()
@@ -108,6 +112,7 @@ public class Oven : MonoBehaviour
         GameObject newObj = Instantiate(_finishedFoodPrefab, transform.position, _finishedFoodPrefab.transform.rotation);
         FinishedFood food = newObj.GetComponent<FinishedFood>();
         food.SetRecipe(item);
+        ItemRemovedEvent?.Invoke();
         return food;
     }
 
@@ -153,6 +158,7 @@ public class Oven : MonoBehaviour
             }
         }
 
+        ItemAddedEvent?.Invoke();
         return true;
     }
 

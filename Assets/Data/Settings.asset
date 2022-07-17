@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e3c107ae541a604eb6b50e44e0cab74, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  musicVolume: 0.61582613
+  musicVolume: 1
   soundVolume: 0.20700014
   levels:
-  - {fileID: 11400000, guid: 06caf78064bb3bc40ab0c8eff8a16554, type: 2}
+  - {fileID: 11400000, guid: 571a24c5e1b66d148bcb1a3e37eb3c92, type: 2}
   - {fileID: 11400000, guid: 09e8190b85169134bae6bdb85e768ae8, type: 2}
   - {fileID: 11400000, guid: 120eea72a57e73e4d99c2658d56dd87a, type: 2}
   - {fileID: 11400000, guid: 1d220536d5c9757459234f3c55857962, type: 2}
@@ -23,4 +23,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5f426c290428c894496f7fed526132a8, type: 2}
   - {fileID: 11400000, guid: 8298dd57c32a0234589f66beb40cae24, type: 2}
   - {fileID: 11400000, guid: d89a186c3894fb54788b2f6180297ea6, type: 2}
-  selectedLevel: 1
+  selectedLevel: 0
