@@ -25,9 +25,14 @@ public class OutputShelf : MonoBehaviour
     private float _socialDistancing = 1f;
 
     [SerializeField]
-    private OrderList _orderList;
+    private OrderList _orderUI;
+
+    [SerializeField]
+    private List<Customer> _customersInOrderTheyCame;
 
     private int ShelfWidth => _customerSlots == null ? 0 : _customerSlots.Length;
+
+    public IEnumerable<Customer> CustomersInOrderTheyCame => _customersInOrderTheyCame;
 
     public void SetShelfWidth(int width)
     {
@@ -61,8 +66,9 @@ public class OutputShelf : MonoBehaviour
 
         Customer customer = newObj.GetComponent<Customer>();
         customer.SetRequest(productRequest);
+        _customersInOrderTheyCame.Add(customer);
         
-        RecipeUI newUI = _orderList.AddOrder(customer);
+        RecipeUI newUI = _orderUI.AddOrder(customer);
         customer.SetUI(newUI);
 
         _customerSlots[slotNum] = customer;

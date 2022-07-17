@@ -26,19 +26,16 @@ public class GameDice : PickupObject
 
     public bool CanBePickedUp => _isDestroying == false;
 
+    private DiceColor _color;
     private int _currentNum = 1;
     private bool _isDestroying;
+
+    public int Number => _currentNum;
+    public DiceColor Color => _color;
 
     protected override void Update()
     {
         base.Update();
-
-        if (Input.GetKeyDown(KeyCode.Alpha1)) SetNumberHop(1);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) SetNumberHop(2);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) SetNumberHop(3);
-        if (Input.GetKeyDown(KeyCode.Alpha4)) SetNumberHop(4);
-        if (Input.GetKeyDown(KeyCode.Alpha5)) SetNumberHop(5);
-        if (Input.GetKeyDown(KeyCode.Alpha6)) SetNumberHop(6);
     }
 
 
@@ -81,6 +78,7 @@ public class GameDice : PickupObject
 
     public void SetColorAndValue(DiceColor col, int val)
     {
+        _color = col;
         SetNumber(val);
 
         foreach (DiceColorSetting setting in _allColors)
