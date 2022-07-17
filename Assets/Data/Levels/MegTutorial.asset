@@ -25,15 +25,23 @@ MonoBehaviour:
     _weight: 1
   - _value: 5
     _weight: 2
-  _potentialRecipes: []
+  _potentialRecipes:
+  - _value: {fileID: 11400000, guid: 78a58e4c4f65a474c9bc2ba59e8c3b46, type: 2}
+    _weight: 0
+  - _value: {fileID: 11400000, guid: 9e07605ef3db05c468635661e8adaa17, type: 2}
+    _weight: 0
+  - _value: {fileID: 11400000, guid: 8a46702eda7fde34b823d8aecc81f00e, type: 2}
+    _weight: 0
+  - _value: {fileID: 11400000, guid: 5b12530799346e34cb19c619c7175a70, type: 2}
+    _weight: 0
   _maxDice: 5
-  _diceSpawnTime: 20
-  _orderSpawnTime: 5
+  _diceSpawnTime: 13
+  _orderSpawnTime: 11
   _maxOrders: 3
-  _ovenCount: 3
+  _ovenCount: 1
   _shelfSpace: 2
   _totalLevelTime: 90
-  _happinessRequirement: 0
+  _happinessRequirement: 5
   _tutorialDiceQueue:
   - number: 6
     color: 2
@@ -45,18 +53,19 @@ MonoBehaviour:
     color: 1
   - number: 4
     color: 1
+  - number: 5
+    color: 0
   - number: 1
     color: 0
-  - number: 6
-    color: 2
   - number: 2
     color: 0
-  - number: 1
-    color: 3
-  - number: 1
-    color: 3
+  - number: 5
+    color: 2
+  - number: 4
+    color: 1
   _tutorialRequestQueue:
   - {fileID: 11400000, guid: 78a58e4c4f65a474c9bc2ba59e8c3b46, type: 2}
   - {fileID: 11400000, guid: 9e07605ef3db05c468635661e8adaa17, type: 2}
   - {fileID: 11400000, guid: 8a46702eda7fde34b823d8aecc81f00e, type: 2}
-  - {fileID: 11400000, guid: 8a46702eda7fde34b823d8aecc81f00e, type: 2}
+  - {fileID: 11400000, guid: 1113461ca1df5a2469176fb03ca0e9f6, type: 2}
+  - {fileID: 11400000, guid: 5b12530799346e34cb19c619c7175a70, type: 2}
