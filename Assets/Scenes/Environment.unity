@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -880,7 +880,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh386046
+  m_Name: pb_Mesh38128
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14078,7 +14078,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh386010
+  m_Name: pb_Mesh38092
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16544,7 +16544,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh386768
+  m_Name: pb_Mesh38850
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18490,7 +18490,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh387458
+  m_Name: pb_Mesh39536
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23579,6 +23579,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1755229881515461652, guid: d200539472b44b041b3ee1279df625cb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -51.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755229883137322970, guid: d200539472b44b041b3ee1279df625cb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755229883137322970, guid: d200539472b44b041b3ee1279df625cb,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755229883137322970, guid: d200539472b44b041b3ee1279df625cb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -159.37
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d200539472b44b041b3ee1279df625cb, type: 3}
 --- !u!114 &5762286100564168144 stripped
@@ -23684,7 +23704,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _tutorialManager
       value: 
-      objectReference: {fileID: 1670793504}
+      objectReference: {fileID: 0}
     - target: {fileID: 7787716742209628489, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
         type: 3}
       propertyPath: _orderUI

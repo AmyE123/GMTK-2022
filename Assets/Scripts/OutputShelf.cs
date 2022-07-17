@@ -35,6 +35,7 @@ public class OutputShelf : MonoBehaviour
 
     private Queue<Recipe> _tutorialQueue;
 
+    public static System.Action OnGivenEvent;
 
     private int ShelfWidth => _customerSlots == null ? 0 : _customerSlots.Length;
 
@@ -60,6 +61,7 @@ public class OutputShelf : MonoBehaviour
 
     private void OnCustomerComplete(Customer customer)
     {
+        OnGivenEvent?.Invoke();
         _customersInOrderTheyCame.Remove(customer);
         customer.TakeCompletedGoods();
     }

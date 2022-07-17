@@ -31,12 +31,15 @@ public class InputShelf : PickupHolder
 
     private int ShelfWidth => _diceSlots == null ? 0 : _diceSlots.Length;
 
+    public static System.Action OnTakenEvent;
+
     public override void RemovePickup(PickupObject obj)
     {
         for (int i=0; i<_diceSlots.Length; i++)
         {
             if (obj == _diceSlots[i])
             {
+                OnTakenEvent?.Invoke();
                 _diceSlots[i] = null;
                 break;
             }

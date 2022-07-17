@@ -19,6 +19,8 @@ public class TutorialManager : MonoBehaviour
 
     int _stage;
 
+    bool _exitedLevel = false;
+
     public void Start()
     {
         if (_settings.selectedLevel != 0)
@@ -26,11 +28,52 @@ public class TutorialManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        InputShelf.OnTakenEvent += DiceTakenFromInput;
+        Oven.BakeCompleteEvent += OvenBakeEvent;
+        Oven.ItemAddedEvent += OvenEnterEvent;
+        Oven.ItemRemovedEvent += OvenRemoveEvent;
+        OutputShelf.OnGivenEvent += DeliveryMadeEvent;
+    }
+
+    void DiceTakenFromInput()
+    {
+        if (_stage == 2)
+            _stage ++;
+    }
+
+    void OvenBakeEvent()
+    {
+        if (_stage == 3)
+            _stage ++;
+    }
+
+    void OvenEnterEvent()
+    {
+
+    }
+
+    void OvenRemoveEvent()
+    {
+
+    }
+    
+    void DeliveryMadeEvent()
+    {
+        if (_stage == 4)
+            _stage ++;
     }
 
     private void Update()
     {
         ShowItm(_stage);
+
+        if (_stage < 4)
+        {
+            _levelController.IncreaseRefill();
+        }
+
+        _levelController.IncreaseTimeLimit();
 
         if (_stage == 0)
         {
@@ -40,12 +83,24 @@ public class TutorialManager : MonoBehaviour
         {
             MoveOnAfter(4);
         }
-        if (_stage == 2)
+        if (_stage > 4 && _stage < 16)
         {
-            
+            MoveOnAfter(0.5f);
         }
-        
 
+        if (_stage == 16)
+        {
+            _settings.selectedLevel ++;
+
+            var nextLevel = _settings.GetCurrentLevel();
+
+            if (nextLevel == null)
+                TransitionManager.StartTransition("TitleScene");
+            else
+                TransitionManager.StartTransition("Environment");
+            _stage++;
+        }
+    
     }
 
     private void MoveOnAfter(float seconds)

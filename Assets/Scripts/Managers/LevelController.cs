@@ -78,6 +78,9 @@ public class LevelController : MonoBehaviour
         DoRefill();
     }
 
+    public void IncreaseRefill() => _timeUntilNextRefill = _levelConfig.RefillTime;
+    public void IncreaseTimeLimit() => _timeRemaining = _levelConfig.TotalLevelTime;
+
     public void Update()
     {
         if (_timeUp || _paused)
