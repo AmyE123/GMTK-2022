@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fd94bd823cf2648a47703aca60b74f, type: 3}
   m_Name: Blue0
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 07b83a29b6c23b14f9ead0627cb33fea, type: 3}
+  _icon: {fileID: -1429012418, guid: 7034f7573dcb07c4d8a14aa3ec4e8edf, type: 3}
+  _hueTint:
+    serializedVersion: 2
+    rgba: 4294928128
   _displayName: Lemon Cake
   _requiredSpecificDice: []
   _requiredColors: 01000000

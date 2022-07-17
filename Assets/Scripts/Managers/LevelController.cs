@@ -14,6 +14,9 @@ public class LevelController : MonoBehaviour
     private OvenController _ovenController;
 
     [SerializeField]
+    private TutorialManager _tutorialManager;
+
+    [SerializeField]
     private InputShelf _diceShelf;
 
     [SerializeField]

@@ -246,6 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uiPrefab: {fileID: 6829820438807404653, guid: 3db874f11962b374595f7342ae5023dc,
     type: 3}
+  _audioSource: {fileID: 0}
+  _ovenFinishedSFX: {fileID: 8300000, guid: 0fb12c55c04adff499ee7a2f24d470ed, type: 3}
   _finishedFoodPrefab: {fileID: 3342977652845942303, guid: e91cfe30cfa95054c99f538ff7e84d4e,
     type: 3}
   _doorTransform: {fileID: 6358902986705567352}

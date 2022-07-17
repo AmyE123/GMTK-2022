@@ -11,6 +11,9 @@ namespace GameData
         private Sprite _icon;
 
         [SerializeField]
+        private Color32 _hueTint;
+
+        [SerializeField]
         private string _displayName;
 
         [SerializeField]
