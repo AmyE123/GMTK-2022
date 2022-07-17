@@ -8,6 +8,7 @@ TagManager:
   - Shelf
   - Oven
   - Output
+  - Bin
   layers:
   - Default
   - TransparentFX

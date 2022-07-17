@@ -9,11 +9,13 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     private bool _IsFacingShelf => _inRangeShelves.Count > 0;
     private bool _IsFacingOven => _inRangeOvens.Count > 0;
     private bool _IsFacingOutput => _inRangeOutputs.Count > 0;
+    private bool _IsFacingBin => _inRangeBin.Count > 0;
 
     [SerializeField] private List<PickupObject> _inRangePickups;
     [SerializeField] private List<ObjectShelf> _inRangeShelves;
     [SerializeField] private List<OutputShelf> _inRangeOutputs;
     [SerializeField] private List<Oven> _inRangeOvens;
+    [SerializeField] private List<Bin> _inRangeBin;
 
     [SerializeField] private List<PickupObject> _pickedUpObjects;
     [SerializeField] private List<Transform> _pickupPoints;
@@ -25,6 +27,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     private ObjectShelf _ClosestShelf => GetClosest(_inRangeShelves);
     private Oven _ClosestOven => GetClosest(_inRangeOvens);
     private OutputShelf _ClosestOutput => GetClosest(_inRangeOutputs);
+    private Bin _ClosestBin => GetClosest(_inRangeBin);
 
     [SerializeField]
     private string _contextualAction = "???";
@@ -67,7 +70,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
             _contextualTarget = _ClosestPickup.transform; // yes this is wasteful but gamejam
 
             if (Input.GetKeyDown(KeyCode.E))
-            {             
+            {
                 PickUpObject(_ClosestPickup);
                 _level.OnPlayerHoldChanged(_pickedUpObjects);
             }
@@ -110,7 +113,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 
                 if (didSucceed)
                 {
-                    foreach(GameDice dice in gameDice)
+                    foreach (GameDice dice in gameDice)
                     {
                         Destroy(dice.gameObject);
                         _pickedUpObjects.Remove(dice);
@@ -161,6 +164,18 @@ public class PlayerPickupObjectDetection : MonoBehaviour
                 _contextualTarget = null;
             }
         }
+        else if (_IsFacingBin && isHoldingStuff)
+        {
+            PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
+
+            _contextualAction = "throw away";
+            _contextualTarget = topHeldItem.transform;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                BinObject(topHeldItem);                
+            }
+        }
         else
         {
             _contextualAction = "";
@@ -187,6 +202,12 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         }
     }
 
+    private void BinObject(PickupObject obj)
+    {
+        _pickedUpObjects.Remove(obj);
+        Destroy(obj.gameObject);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Pickup")
@@ -207,6 +228,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         if (other.transform.tag == "Output")
         {
             _inRangeOutputs.Add(other.GetComponent<OutputShelf>());
+        }
+
+        if (other.transform.tag == "Bin")
+        {
+            _inRangeBin.Add(other.GetComponent<Bin>());
         }
     }
 
@@ -230,6 +256,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         if (other.transform.tag == "Output")
         {
             _inRangeOutputs.Remove(other.GetComponent<OutputShelf>());
+        }
+
+        if (other.transform.tag == "Bin")
+        {
+            _inRangeBin.Remove(other.GetComponent<Bin>());
         }
     }
 }
