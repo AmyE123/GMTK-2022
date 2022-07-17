@@ -33,6 +33,7 @@
 * Make the shelf customisable size on startup
 * Game pause should stop timers going down
 * game pause and game over should stop player moving
+* put down things back onto belt
 
 ### ARTWORK
 * Oven
