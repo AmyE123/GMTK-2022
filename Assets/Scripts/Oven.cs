@@ -1,3 +1,4 @@
+using DG.Tweening;
 using GameData;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,23 @@ public class Oven : MonoBehaviour
     private float _timeLeft;
 
     [SerializeField]
+    private AudioSource _audioSource;
+
+    [SerializeField]
+    private AudioClip _ovenFinishedSFX;
+
+    [SerializeField]
     private GameObject _finishedFoodPrefab;
 
     public bool HasItemReady => _currentItem != null && _timeLeft <= 0;
 
     public bool IsBaking => _currentItem != null && _timeLeft > 0;
+
+
+    private void Awake()
+    {
+        _audioSource = GameObject.Find("SFXManager").GetComponent<AudioSource>();
+    }
 
     public void Update()
     {
@@ -30,6 +43,7 @@ public class Oven : MonoBehaviour
     {
         Debug.Log($"Finished baking: {_currentItem.name}");
         // play some animation perhaps?
+        _audioSource.PlayOneShot(_ovenFinishedSFX);
     }
 
     public FinishedFood TakeOutItem()
