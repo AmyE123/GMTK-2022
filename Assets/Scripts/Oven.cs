@@ -1,6 +1,7 @@
 using GameData;
 using System.Collections.Generic;
 using UnityEngine;
+using WorldToCanvas;
 
 public class Oven : MonoBehaviour
 {
@@ -9,11 +10,25 @@ public class Oven : MonoBehaviour
     private float _timeLeft;
 
     [SerializeField]
+    private GameObject _uiPrefab;
+
+    [SerializeField]
     private GameObject _finishedFoodPrefab;
 
     public bool HasItemReady => _currentItem != null && _timeLeft <= 0;
 
     public bool IsBaking => _currentItem != null && _timeLeft > 0;
+
+    public bool IsEmpty => _currentItem == null;
+
+    public Recipe CurrentItem => _currentItem;
+
+    public float BakePercent => 1 - Mathf.Clamp01(_timeLeft / _currentItem.BakeTime);
+
+    void Start()
+    {
+        W2C.InstantiateAs<OvenTimer>(_uiPrefab).Init(this);
+    }
 
     public void Update()
     {
@@ -50,6 +65,7 @@ public class Oven : MonoBehaviour
     {
         if (_currentItem != null)
         {
+            W2CManager.CreateError(transform.position, "oven in use!");
             Debug.Log("Oven is full!");
             return false;
         }
@@ -58,6 +74,7 @@ public class Oven : MonoBehaviour
 
         if (matchingRecipies.Count == 0)
         {
+            W2CManager.CreateError(transform.position, "wrong recipe!");
             Debug.Log("No matching recipes");
             return false;
         }

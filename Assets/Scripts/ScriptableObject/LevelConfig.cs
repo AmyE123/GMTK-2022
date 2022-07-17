@@ -51,6 +51,13 @@ namespace GameData
         [SerializeField]
         private int _happinessRequirement;
 
+        [Header("Tutorial Stuff")]
+        [SerializeField]
+        private Recipe.DiceColorNumberCombo[] _tutorialDiceQueue;
+
+        [SerializeField]
+        private Recipe[] _tutorialRequestQueue;
+
         public string LevelName => _levelName;
         public string Description => _description;
         public int RefillTime => _diceSpawnTime;
@@ -61,6 +68,9 @@ namespace GameData
         public int HappinessRequirement => _happinessRequirement;
         public int OrderSpawnTime => _orderSpawnTime;
         public int MaxOrders => _maxOrders;
+
+        public IEnumerable<Recipe.DiceColorNumberCombo> TutorialDiceQueue => _tutorialDiceQueue;
+        public IEnumerable<Recipe> TutorialRequestQueue => _tutorialRequestQueue;
 
         public IEnumerable<Recipe> AllRecipies
         {

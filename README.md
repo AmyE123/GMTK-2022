@@ -10,12 +10,10 @@
     * Putting dice with matching colors in
     * Waiting for next delivery of dice + any unused decay
 * Tutorial functionality
-    * specific orders
     * no decaying
 * Tutorial level with special rules...?
 
 ### UX
-* error messages when putting food into oven?
 * error messages if you try to deliver something that isn't a product
 * NEW DELIVERY text burst (and full)
 
@@ -31,10 +29,11 @@
 * Game pause should stop timers going down
 * game pause and game over should stop player moving
 * put down things back onto belt
+* use dice count to make score when using colours
+* remove freshenss
 
 ### COSMETIC
 * Dice should appear on oven
-* visuals for oven in progress
 * Music
 * sound effects
 

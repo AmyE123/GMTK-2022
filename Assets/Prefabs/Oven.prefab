@@ -212,6 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37f8c96ddf575947a18c3ceae9135ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _uiPrefab: {fileID: 6829820438807404653, guid: 3db874f11962b374595f7342ae5023dc,
+    type: 3}
   _finishedFoodPrefab: {fileID: 3342977652845942303, guid: e91cfe30cfa95054c99f538ff7e84d4e,
     type: 3}
 --- !u!1 &5454519963857215810

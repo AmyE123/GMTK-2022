@@ -9,6 +9,7 @@ namespace WorldToCanvas
         static W2CManager _instance;
 
         [SerializeField] RectTransform _canvasRect;
+        [SerializeField] private GameObject _errorPrefab;
 
         Canvas _canvas;     
         RectTransform _rect;
@@ -57,6 +58,12 @@ namespace WorldToCanvas
         public static T InstantiateAs<T>(GameObject prefab) where T : W2C
         {
             return Instantiate(prefab) as T;
+        }
+
+        public static void CreateError(Vector3 position, string text)
+        {
+            TextBurst burst = InstantiateAs<TextBurst>(_instance._errorPrefab);
+            burst.Init(position, text);
         }
 
         static Vector2 MousePositionToCanvas()

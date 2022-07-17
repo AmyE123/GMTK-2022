@@ -59,6 +59,10 @@ public class LevelController : MonoBehaviour
         _objectShelf.SetWidth(_levelConfig.ShelfSpace);
         _diceShelf.SetShelfWidth(_levelConfig.MaxDice);
         _ovenController.SetLevel(_levelConfig);
+
+        _diceShelf.SetTutorialQueue(_levelConfig.TutorialDiceQueue);
+        _customerShelf.SetTutorialQueue(_levelConfig.TutorialRequestQueue);
+        
         DoRefill();
     }
 
