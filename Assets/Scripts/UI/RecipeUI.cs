@@ -37,6 +37,12 @@ public class RecipeUI : MonoBehaviour
         _checkmarkRect.gameObject.SetActive(false);
         _icon.sprite = _recipe.Icon;
 
+        foreach (Recipe.DiceColorNumberCombo combo in _recipe.SpecificDice)
+        {
+            GameObject newObj = Instantiate(_requirementPrefab, _requirementParent);
+            newObj.GetComponent<RecipeDice>().SetColorAndValue(combo.color, combo.number);
+        }
+
         foreach (DiceColor col in _recipe.Colors)
         {
             GameObject newObj = Instantiate(_requirementPrefab, _requirementParent);

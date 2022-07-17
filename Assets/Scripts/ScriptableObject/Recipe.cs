@@ -14,6 +14,9 @@ namespace GameData
         private string _displayName;
 
         [SerializeField]
+        private DiceColorNumberCombo[] _requiredSpecificDice;
+
+        [SerializeField]
         private DiceColor[] _requiredColors;
 
         [SerializeField, Range(1,6)]
@@ -35,6 +38,16 @@ namespace GameData
 
         public IEnumerable<int> Numbers => _requiredNumbers;
 
+        public IEnumerable<DiceColorNumberCombo> SpecificDice => _requiredSpecificDice;
+
         public int BasePoints => _baseHappinessPoints;
+
+        [System.Serializable]
+        public class DiceColorNumberCombo
+        {
+            [Range(1, 6)]
+            public int number = 6;
+            public DiceColor color;
+        }
     }
 }

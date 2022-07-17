@@ -66,6 +66,9 @@ public class OrderChecker
     {
         var result = new List<DiceRequirement>();
 
+        foreach (Recipe.DiceColorNumberCombo combo in rec.SpecificDice)
+            result.Add(new DiceRequirement(combo));
+
         foreach (DiceColor col in rec.Colors)
             result.Add(new DiceRequirement(col));
 
@@ -119,6 +122,13 @@ public class OrderChecker
         {
             _number = nval;
             _hasNumber = true;;
+        }
+
+        public DiceRequirement(Recipe.DiceColorNumberCombo combo)
+        {
+            _hasNumber = _hasColor = true;
+            _col = combo.color;
+            _number = combo.number;
         }
 
         public bool DoesMatch(GameDice dice)
