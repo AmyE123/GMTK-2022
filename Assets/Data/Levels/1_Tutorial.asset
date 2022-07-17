@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde77b43644df674997f1d3354363ada, type: 3}
   m_Name: 1_Tutorial
   m_EditorClassIdentifier: 
-  _levelName: tutorial
-  _description: The Dice family have just opened their bakery, and are trying to
-    entice their first customers
+  _description: The Dice family have just open their bakery, and are trying to entice
+    their first customers
   _potentialColors:
   - _value: 0
     _weight: 1
@@ -31,10 +30,10 @@ MonoBehaviour:
   - _value: {fileID: 11400000, guid: 9df51ed0cbd69a346b99f96965458669, type: 2}
     _weight: 1
   _maxDice: 5
-  _diceSpawnTime: 2
+  _diceSpawnTime: 20
   _orderSpawnTime: 5
   _maxOrders: 3
   _ovenCount: 3
-  _shelfSpace: 2
-  _totalLevelTime: 30
+  _shelfSpace: 5
+  _totalLevelTime: 90
   _happinessRequirement: 0

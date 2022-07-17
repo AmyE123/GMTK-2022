@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fd94bd823cf2648a47703aca60b74f, type: 3}
   m_Name: Cake(Lemon)
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 07b83a29b6c23b14f9ead0627cb33fea, type: 3}
+  _icon: {fileID: 21300000, guid: b5c0f7238ceab0a4fa72d34125825d2b, type: 3}
   _displayName: Lemon Cake
-  _requiredColors: 
-  _requiredNumbers: 
   _requiredSpecificDice:
   - number: 5
     color: 3
+  _requiredColors: 
+  _requiredNumbers: 
   _bakeTime: 3
   _baseHappinessPoints: 1
