@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde77b43644df674997f1d3354363ada, type: 3}
   m_Name: MegTutorial
   m_EditorClassIdentifier: 
-  _description: The Dice family have just open their bakery, and are trying to entice
-    their first customers
+  _levelName: Tutorial
+  _description: The Dice family have just opened their bakery, and are trying to
+    entice their first customers
   _potentialColors:
   - _value: 0
     _weight: 1
@@ -37,3 +38,5 @@ MonoBehaviour:
   _shelfSpace: 2
   _totalLevelTime: 90
   _happinessRequirement: 0
+  _tutorialDiceQueue: []
+  _tutorialRequestQueue: []

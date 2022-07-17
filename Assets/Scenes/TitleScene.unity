@@ -10137,6 +10137,7 @@ MonoBehaviour:
   _buttonPrefab: {fileID: 4881440092251117569, guid: 8459f239e5a4c274c88f381df81cd13c,
     type: 3}
   _settings: {fileID: 11400000, guid: 59628e988ed4e0642956624f04011444, type: 2}
+  scrollRect: {fileID: 441955733}
 --- !u!222 &2783012812218065839
 CanvasRenderer:
   m_ObjectHideFlags: 0
