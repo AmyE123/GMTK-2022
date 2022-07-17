@@ -31,6 +31,6 @@ public class FinishedFood : PickupObject
     protected override void Update()
     {
         base.Update();
-        _freshness -= Time.deltaTime * _freshDecayRate;
+        _freshness -= Time.deltaTime * _freshDecayRate; // doesn't accoutn for paused game
     }
 }

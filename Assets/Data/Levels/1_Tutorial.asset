@@ -31,7 +31,7 @@ MonoBehaviour:
   - _value: {fileID: 11400000, guid: 9df51ed0cbd69a346b99f96965458669, type: 2}
     _weight: 1
   _maxDice: 5
-  _diceSpawnTime: 20
+  _diceSpawnTime: 4
   _orderSpawnTime: 5
   _maxOrders: 3
   _ovenCount: 3

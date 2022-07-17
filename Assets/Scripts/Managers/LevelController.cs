@@ -54,6 +54,9 @@ public class LevelController : MonoBehaviour
     public float LevelTimeRemaining => Mathf.Clamp(_timeRemaining, 0, 9999);
 
     private bool _timeUp;
+    private bool _paused;
+
+    public void SetPaused(bool yesno) => _paused = yesno;
 
     public void Start()
     {
@@ -74,7 +77,7 @@ public class LevelController : MonoBehaviour
 
     public void Update()
     {
-        if (_timeUp)
+        if (_timeUp || _paused)
             return;
 
         _timeRemaining -= Time.deltaTime;

@@ -18,10 +18,7 @@
 * nobody wants this error message for counter
 
 ### CORE FUNCTIONALITY
-* Food expiring
-    * shown with steam
 * Exchanging food for points
-* Time limits
 * loading a level from playerprefs or something
 * lose screen
 * happiness counter
@@ -37,6 +34,7 @@
 * Dice should appear on oven
 * Music
 * sound effects
+* customers are just capsules
 
 ### NICE TO HAVE
 * put down in closest slot on shelf not first available
@@ -51,5 +49,4 @@
 * transition manager
 
 ### BUGS
-* It's possible to pick up a dice as it's disappearing and this causes errors
 * picking up more stuff from ovens should be possible

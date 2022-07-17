@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private float _rotationSpeed = DEFAULT_ROTATION_SPEED;
 
     private bool _canMove = true;
+    private bool _paused = false;
+
+    public void SetPaused(bool yesno) => _paused = yesno;
 
     public void StopMoving()
     {
@@ -21,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (_canMove == false)
+        if (_canMove == false || _paused)
             return;
             
         bool isGrounded = _characterController.isGrounded;

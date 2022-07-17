@@ -44,6 +44,11 @@ public class Oven : MonoBehaviour
     [SerializeField]
     private Transform _openDoorTransform;
 
+    private bool _paused = false;
+
+    public void SetPaused(bool yesno) => _paused = yesno;
+
+
     void Start()
     {
         W2C.InstantiateAs<OvenTimer>(_uiPrefab).Init(this);
@@ -51,6 +56,9 @@ public class Oven : MonoBehaviour
 
     public void Update()
     {
+        if (_paused)
+            return;
+
         if (_currentItem != null && _timeLeft > 0)
         {
             _timeLeft -= Time.deltaTime;
