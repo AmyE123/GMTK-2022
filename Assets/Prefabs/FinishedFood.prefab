@@ -128,7 +128,7 @@ MonoBehaviour:
   _currentHolder: {fileID: 0}
   _freshDecayRate: 0.1
   _freshness: 3
-  _image: {fileID: 0}
+  _image: {fileID: 3477559346576302389}
 --- !u!65 &5902548769486526435
 BoxCollider:
   m_ObjectHideFlags: 0

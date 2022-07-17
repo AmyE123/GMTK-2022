@@ -41,7 +41,9 @@ public class Oven : MonoBehaviour
         _currentItem = null;
 
         GameObject newObj = Instantiate(_finishedFoodPrefab, transform.position, _finishedFoodPrefab.transform.rotation);
-        return newObj.GetComponent<FinishedFood>();
+        FinishedFood food = newObj.GetComponent<FinishedFood>();
+        food.SetRecipe(item);
+        return food;
     }
 
     public bool GiveDice(List<GameDice> diceList)

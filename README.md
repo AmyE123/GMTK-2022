@@ -33,8 +33,6 @@
 * Make the shelf customisable size on startup
 
 ### ORDER SYSTEM
-* orders
-* a way to add to counter
 * make orders disappear
 
 ### COSMETIC

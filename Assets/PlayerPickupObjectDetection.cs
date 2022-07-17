@@ -129,6 +129,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
                 if (result != null)
                 {
                     PickUpObject(result);
+                    _level.OnPlayerHoldChanged(_pickedUpObjects);
                 }
             }
         }
@@ -136,8 +137,27 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         {
             PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
 
-            _contextualAction = "deliver";
-            _contextualTarget = topHeldItem.transform;
+            if (topHeldItem is FinishedFood)
+            {
+                _contextualAction = "deliver";
+                _contextualTarget = topHeldItem.transform;
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    bool success = _ClosestOutput.TryPutDownFood(topHeldItem as FinishedFood);
+
+                    if (success)
+                    {
+                        _pickedUpObjects.Remove(topHeldItem);
+                        _level.OnPlayerHoldChanged(_pickedUpObjects);
+                    }
+                }
+            }
+            else
+            {
+                _contextualAction = "";
+                _contextualTarget = null;
+            }
         }
         else
         {

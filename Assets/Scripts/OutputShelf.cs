@@ -34,6 +34,29 @@ public class OutputShelf : MonoBehaviour
 
     public IEnumerable<Customer> CustomersInOrderTheyCame => _customersInOrderTheyCame;
 
+    public bool TryPutDownFood(FinishedFood food)
+    {
+        foreach (Customer c in _customersInOrderTheyCame)
+        {
+            if (c.RecipeRequest != food.Recipe)
+            {
+                continue;
+            }
+
+            food.SetToFollow(c.HandTransform);
+            OnCustomerComplete(c);
+            return true;
+        }
+
+        return false;
+    }
+
+    private void OnCustomerComplete(Customer customer)
+    {
+        _customersInOrderTheyCame.Remove(customer);
+        customer.TakeCompletedGoods();
+    }
+
     public void SetShelfWidth(int width)
     {
         _meshParent.localScale = new Vector3(width * _socialDistancing, 1, 1);
