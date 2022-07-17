@@ -34,6 +34,8 @@ MonoBehaviour:
     _weight: 0
   - _value: {fileID: 11400000, guid: 5b12530799346e34cb19c619c7175a70, type: 2}
     _weight: 0
+  - _value: {fileID: 11400000, guid: 1113461ca1df5a2469176fb03ca0e9f6, type: 2}
+    _weight: 0
   _maxDice: 5
   _diceSpawnTime: 13
   _orderSpawnTime: 11

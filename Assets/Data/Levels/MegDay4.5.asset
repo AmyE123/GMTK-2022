@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bde77b43644df674997f1d3354363ada, type: 3}
-  m_Name: MegDay7
+  m_Name: MegDay4
   m_EditorClassIdentifier: 
   _levelName: day ???
   _description: The Dice family have just open their bakery, and are trying to entice
