@@ -619,6 +619,11 @@ PrefabInstance:
       propertyPath: _level
       value: 
       objectReference: {fileID: 6572775932502423667}
+    - target: {fileID: 3901964324868014681, guid: 6bcffb988cc0fd34dada35ee5acd309d,
+        type: 3}
+      propertyPath: _throwAwaySFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 21d337b96768bd3438c1b8c30a4de264, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bcffb988cc0fd34dada35ee5acd309d, type: 3}
 --- !u!4 &8003606965894966913 stripped
