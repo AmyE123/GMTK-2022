@@ -15,6 +15,19 @@ public class Oven : MonoBehaviour
     [SerializeField]
     private GameObject _finishedFoodPrefab;
 
+    [SerializeField]
+    private Transform _doorTransform;
+
+    [SerializeField]
+    private Transform _mainOven;
+
+    [SerializeField]
+    private ParticleController _particles;
+
+    private float _wobbleFactor;
+
+    private float _wobblePhase;
+
     public bool HasItemReady => _currentItem != null && _timeLeft <= 0;
 
     public bool IsBaking => _currentItem != null && _timeLeft > 0;
@@ -24,6 +37,12 @@ public class Oven : MonoBehaviour
     public Recipe CurrentItem => _currentItem;
 
     public float BakePercent => 1 - Mathf.Clamp01(_timeLeft / _currentItem.BakeTime);
+
+    [SerializeField]
+    private Transform _closedDoorTransform;
+
+    [SerializeField]
+    private Transform _openDoorTransform;
 
     void Start()
     {
@@ -38,6 +57,17 @@ public class Oven : MonoBehaviour
             
             if (_timeLeft <= 0)
                 OnBakeComplete();
+        }
+
+        if (IsBaking)
+        {
+            _particles.isEmitting = true;
+            _doorTransform.rotation = Quaternion.Lerp(_doorTransform.rotation, _closedDoorTransform.rotation, Time.deltaTime * 15);
+        }
+        else
+        {
+            _particles.isEmitting = false;
+            _doorTransform.rotation = Quaternion.Lerp(_doorTransform.rotation, _openDoorTransform.rotation, Time.deltaTime * 15);
         }
     }
 

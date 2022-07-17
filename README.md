@@ -15,6 +15,7 @@
 ### UX
 * error messages if you try to deliver something that isn't a product
 * NEW DELIVERY text burst (and full)
+* nobody wants this error message for counter
 
 ### CORE FUNCTIONALITY
 * Food expiring
@@ -42,6 +43,7 @@
 * recipies over people
 * tweens/animations for picking up items/ putting down
 * also show icons requested on counter
+* oven smoosh
 
 ### UI AND MENUS
 * Title screen
