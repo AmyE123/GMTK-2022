@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fd94bd823cf2648a47703aca60b74f, type: 3}
   m_Name: Red3_2
   m_EditorClassIdentifier: 
-  _icon: {fileID: 441924455, guid: 71cd3ce287b87b541a7f90ca655437c8, type: 3}
+  _icon: {fileID: -104056478, guid: ac3e8ff3a9c4384439b14bcb09e0b0cb, type: 3}
   _hueTint:
     serializedVersion: 2
     rgba: 4282076352

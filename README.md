@@ -48,3 +48,7 @@
 * Make a title screen pacakge
 * Make a transition manager package
 * Music/SFX manager package
+
+
+### FAQ
+inconsistant happy points (yep)

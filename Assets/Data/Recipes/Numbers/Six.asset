@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fd94bd823cf2648a47703aca60b74f, type: 3}
   m_Name: Six
   m_EditorClassIdentifier: 
-  _icon: {fileID: -1857023261, guid: 99c3134819098e64fabf6de36e3eb327, type: 3}
+  _icon: {fileID: -198834001, guid: 17fdd9d10053cff4dbd4dba15f820db5, type: 3}
   _hueTint:
     serializedVersion: 2
     rgba: 4294967295
