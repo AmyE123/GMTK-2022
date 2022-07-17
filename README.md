@@ -17,6 +17,7 @@
 ### UX
 * error messages when putting food into oven?
 * error messages if you try to deliver something that isn't a product
+* NEW DELIVERY text burst (and full)
 
 ### CORE FUNCTIONALITY
 * Food expiring
@@ -30,6 +31,8 @@
 * happiness counter
 * Make sure you can't put finished items into the oven
 * Make the shelf customisable size on startup
+* Game pause should stop timers going down
+* game pause and game over should stop player moving
 
 ### ARTWORK
 * Oven
