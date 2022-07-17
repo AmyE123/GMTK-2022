@@ -1,16 +1,8 @@
 # gmtk-2022
 
 ## TODO
-* error messages when putting food into oven?
-* Food expiring
-    * shown with steam
-* Exchanging food for points
-* Time limits
-* loading a level from playerprefs or something
-* orders
-* a way to add to counter
-* the bin
-* tweens/animations for picking up items/ putting down
+
+### ONBOARDING
 * Tutorial Messages
     * Putting dice with matching numbers in
     * Giving items to customers
@@ -21,21 +13,41 @@
     * specific dice
     * specific orders
     * no decaying
-
 * Tutorial level with special rules...?
+
+### UX
+* error messages when putting food into oven?
+* error messages if you try to deliver something that isn't a product
+
+### CORE FUNCTIONALITY
+* Food expiring
+    * shown with steam
+* Exchanging food for points
+* Time limits
+* loading a level from playerprefs or something
+* the bin
 * win screen
 * lose screen
 * happiness counter
+* Make sure you can't put finished items into the oven
+* Make the shelf customisable size on startup
+
+### ORDER SYSTEM
+* orders
+* a way to add to counter
+* make orders disappear
+
+### COSMETIC
+* tweens/animations for picking up items/ putting down
+* move animations
+* also show icons requested on counter
+* Dice should appear on oven
+* visuals for oven in progress
+
+### NICE TO HAVE
+* put down in closest slot on shelf not first available
+
+### UI AND MENUS
 * Title screen
 * level select
 * truck UI for next delivery
-* Make the shelf customisable size on startup
-* put down in closest slot on shelf not first available
-* error messages if you try to deliver something that isn't a product
-* product items and holding them!
-* move animations
-* also show icons requested on counter
-* make orders disappear
-* Make sure you can't put finished items into the oven
-* Dice should appear on oven
-* visuals for oven in progress
