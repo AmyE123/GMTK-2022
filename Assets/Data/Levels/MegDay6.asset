@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde77b43644df674997f1d3354363ada, type: 3}
   m_Name: MegDay6
   m_EditorClassIdentifier: 
-  _levelName: day ???
+  _levelName: Day 6
   _description: The Dice family have just open their bakery, and are trying to entice
     their first customers
   _potentialColors:
@@ -26,17 +26,17 @@ MonoBehaviour:
     _weight: 0
   _potentialNumbers:
   - _value: 6
-    _weight: 2
+    _weight: 1
   - _value: 5
-    _weight: 2
+    _weight: 1
   - _value: 4
     _weight: 3
   - _value: 3
-    _weight: 3
+    _weight: 5
   - _value: 2
-    _weight: 1
+    _weight: 5
   - _value: 1
-    _weight: 1
+    _weight: 5
   _potentialRecipes:
   - _value: {fileID: 11400000, guid: 3eb65625b43a80a46ba7a8426207b73d, type: 2}
     _weight: 1
@@ -82,39 +82,47 @@ MonoBehaviour:
     _weight: 1
   - _value: {fileID: 11400000, guid: 6c3ee9a62995088498e0a9b5efa349a3, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 33b1d073acdedcd4db36a654c94557b9, type: 2}
+  - _value: {fileID: 11400000, guid: e26741af231e3b742b92cad1bcc4977a, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: ce1e7d824e39c7040956ea4f9029baa0, type: 2}
+  - _value: {fileID: 11400000, guid: 099e9eb068e7bea42a02835220b97ff5, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 7e1f78fbef65038408a426223d69b5cd, type: 2}
+  - _value: {fileID: 11400000, guid: 9efad09f2331088419ce1314d1ae4f88, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: f9ab1da63c516ad42a14c05b754770d4, type: 2}
+  - _value: {fileID: 11400000, guid: 55a0a90190225e840aa1c896661fb7c2, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 79e63f08d4ed3f746b3698a65bdb4898, type: 2}
+  - _value: {fileID: 11400000, guid: 31d064b8f81b7f549ae58512c5787f53, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 59e056bf93ed2e645a8fd2b2b4354166, type: 2}
+  - _value: {fileID: 11400000, guid: 05b2a4654c1798c4eb2bbd612e337846, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 946a988ca4a602046a28ebd32de1b7db, type: 2}
+  - _value: {fileID: 11400000, guid: 1c8e2de353dd09f4fa324c726b0c90d0, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 3a9d364529d248e43b900953cd5afefe, type: 2}
+  - _value: {fileID: 11400000, guid: 287503ea057dc3240a58e9e820e40448, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: e8c24775f0be52c4bba1f1fe3fa0f89f, type: 2}
+  - _value: {fileID: 11400000, guid: c59db5101bf052a4e9084804506a15e1, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 51ea7cbaac42d8d4fa387f67395bae96, type: 2}
+  - _value: {fileID: 11400000, guid: 8e8de553e9a270b4f8d4bdf88ff6ce28, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: ba7549880eb176e499cd6106392dd1c4, type: 2}
+  - _value: {fileID: 11400000, guid: 10f72e423ab8b9847a77413cbcc6672a, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 968dded4c34aad94884b2a46f7402c02, type: 2}
+  - _value: {fileID: 11400000, guid: 77e248c76734a1f4bb38b0137ba8d60b, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 3cccd92e01f09e14b8541ea84b8be5f7, type: 2}
+  - _value: {fileID: 11400000, guid: 6e7f1476422368144b994d46140eaf67, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: ada5f8cc1eced724ca359a3a2e50fcd6, type: 2}
+  - _value: {fileID: 11400000, guid: ed49ab3aa831036479611d6a7dc52e99, type: 2}
     _weight: 1
-  _maxDice: 5
-  _diceSpawnTime: 30
+  - _value: {fileID: 11400000, guid: ef6014af6e3eee744950637153912879, type: 2}
+    _weight: 1
+  - _value: {fileID: 11400000, guid: 5c32c14881f31894c8a2c7db37e2de92, type: 2}
+    _weight: 1
+  - _value: {fileID: 11400000, guid: 62ebfa95f27442449bc4e36f204a4cff, type: 2}
+    _weight: 1
+  - _value: {fileID: 11400000, guid: 35565188f4372a94d914963eba21eddb, type: 2}
+    _weight: 1
+  _maxDice: 8
+  _diceSpawnTime: 20
   _orderSpawnTime: 10
   _maxOrders: 3
-  _ovenCount: 2
+  _ovenCount: 3
   _shelfSpace: 3
   _totalLevelTime: 150
   _happinessRequirement: 0
