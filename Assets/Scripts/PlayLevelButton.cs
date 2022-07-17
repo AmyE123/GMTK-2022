@@ -8,6 +8,7 @@ public class PlayLevelButton : MonoBehaviour
 {
     [SerializeField] Text _titleText;
     [SerializeField] Text _descText;
+    [SerializeField] GameSettings _Settings;
 
     private LevelConfig _level;
     private int _levelIdx;
@@ -22,6 +23,7 @@ public class PlayLevelButton : MonoBehaviour
 
     public void ButtonPress()
     {
-        TransitionManager.StartTransition("SampleScene");
+        _Settings.selectedLevel = _levelIdx;
+        TransitionManager.StartTransition("Environment");
     }
 }

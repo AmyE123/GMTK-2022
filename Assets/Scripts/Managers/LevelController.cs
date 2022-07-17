@@ -6,6 +6,8 @@ using GameData;
 public class LevelController : MonoBehaviour
 {
     [SerializeField]
+    private GameSettings _gameSettings;
+
     private LevelConfig _levelConfig;
 
     [SerializeField]
@@ -53,6 +55,8 @@ public class LevelController : MonoBehaviour
 
     public void Start()
     {
+        _levelConfig = _gameSettings.GetCurrentLevel();
+        
         _orderUI.SetLevel(_levelConfig);
         _timeRemaining = _levelConfig.TotalLevelTime;
         _customerShelf.SetShelfWidth(_levelConfig.MaxOrders);

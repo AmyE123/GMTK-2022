@@ -304,6 +304,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 7612272258957044048, guid: 0c6a8f6d67bae9041a46b96d772c545c,
         type: 3}
+      propertyPath: _gameSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 59628e988ed4e0642956624f04011444,
+        type: 2}
+    - target: {fileID: 7612272258957044048, guid: 0c6a8f6d67bae9041a46b96d772c545c,
+        type: 3}
       propertyPath: _customerShelf
       value: 
       objectReference: {fileID: 7787716742209628489}

@@ -25,11 +25,11 @@ public class WinScreen : MonoBehaviour
 
     public void ButtonPressRetry()
     {
-        TransitionManager.StartTransition("SampleScene");
+        TransitionManager.StartTransition("Environment");
     }
 
     public void ButtonPressContinue()
     {
-        TransitionManager.StartTransition("SampleScene");
+        TransitionManager.StartTransition("Environment");
     }
 }

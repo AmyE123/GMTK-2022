@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _titleText: {fileID: 4881440093207888609}
   _descText: {fileID: 4881440093507879736}
+  _Settings: {fileID: 11400000, guid: 59628e988ed4e0642956624f04011444, type: 2}
 --- !u!1 &4881440093207888611
 GameObject:
   m_ObjectHideFlags: 0
