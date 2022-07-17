@@ -117,10 +117,20 @@ public class PlayerPickupObjectDetection : MonoBehaviour
                 }
             }
         }
-        else if (_IsFacingOven && isHoldingStuff == false && _ClosestOven.HasItemReady)
+        else if (_IsFacingOven && areHandsFull == false && _ClosestOven.HasItemReady)
         {
             _contextualAction = "take out food";
             _contextualTarget = _ClosestOven.transform;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                FinishedFood result = _ClosestOven.TakeOutItem();
+
+                if (result != null)
+                {
+                    PickUpObject(result);
+                }
+            }
         }
         else if (_IsFacingOutput && isHoldingStuff)
         {

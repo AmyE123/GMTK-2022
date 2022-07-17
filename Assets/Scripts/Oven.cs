@@ -8,6 +8,9 @@ public class Oven : MonoBehaviour
     private LevelConfig _levelConfig;
     private float _timeLeft;
 
+    [SerializeField]
+    private GameObject _finishedFoodPrefab;
+
     public bool HasItemReady => _currentItem != null && _timeLeft <= 0;
 
     public bool IsBaking => _currentItem != null && _timeLeft > 0;
@@ -29,15 +32,16 @@ public class Oven : MonoBehaviour
         // play some animation perhaps?
     }
 
-    public Recipe TakeOutItem()
+    public FinishedFood TakeOutItem()
     {
         if (_currentItem == null || _timeLeft > 0)
             return null;
 
         Recipe item = _currentItem;
         _currentItem = null;
-        
-        return item;
+
+        GameObject newObj = Instantiate(_finishedFoodPrefab, transform.position, _finishedFoodPrefab.transform.rotation);
+        return newObj.GetComponent<FinishedFood>();
     }
 
     public bool GiveDice(List<GameDice> diceList)
