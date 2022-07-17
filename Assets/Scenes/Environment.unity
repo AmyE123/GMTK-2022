@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1339,6 +1339,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517088442}
     m_Modifications:
+    - target: {fileID: 852276936500927615, guid: 6e18767e46ecff741a1a03956bdf5833,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745729898837885774, guid: 6e18767e46ecff741a1a03956bdf5833,
         type: 3}
       propertyPath: m_Name
@@ -1819,6 +1824,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517088442}
     m_Modifications:
+    - target: {fileID: 852276936500927615, guid: 6e18767e46ecff741a1a03956bdf5833,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745729898837885774, guid: 6e18767e46ecff741a1a03956bdf5833,
         type: 3}
       propertyPath: m_Name
@@ -5919,6 +5929,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 967223810}
     m_Modifications:
+    - target: {fileID: 852276936500927615, guid: 6e18767e46ecff741a1a03956bdf5833,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745729898837885774, guid: 6e18767e46ecff741a1a03956bdf5833,
         type: 3}
       propertyPath: m_Name
@@ -6942,6 +6957,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 967223810}
     m_Modifications:
+    - target: {fileID: 852276936500927615, guid: 6e18767e46ecff741a1a03956bdf5833,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745729898837885774, guid: 6e18767e46ecff741a1a03956bdf5833,
         type: 3}
       propertyPath: m_Name
@@ -15052,7 +15072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1243876674
 Transform:
   m_ObjectHideFlags: 0
@@ -15221,6 +15241,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 189248936}
     m_Modifications:
+    - target: {fileID: 852276936500927615, guid: 6e18767e46ecff741a1a03956bdf5833,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745729898837885774, guid: 6e18767e46ecff741a1a03956bdf5833,
         type: 3}
       propertyPath: m_Name
@@ -18067,6 +18092,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 189248936}
     m_Modifications:
+    - target: {fileID: 852276936500927615, guid: 6e18767e46ecff741a1a03956bdf5833,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745729898837885774, guid: 6e18767e46ecff741a1a03956bdf5833,
         type: 3}
       propertyPath: m_Name
@@ -20964,6 +20994,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517088442}
     m_Modifications:
+    - target: {fileID: 852276936500927615, guid: 6e18767e46ecff741a1a03956bdf5833,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745729898837885774, guid: 6e18767e46ecff741a1a03956bdf5833,
         type: 3}
       propertyPath: m_Name
@@ -21391,6 +21426,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517088442}
     m_Modifications:
+    - target: {fileID: 852276936500927615, guid: 6e18767e46ecff741a1a03956bdf5833,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745729898837885774, guid: 6e18767e46ecff741a1a03956bdf5833,
         type: 3}
       propertyPath: m_Name
@@ -21842,6 +21882,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 517088442}
     m_Modifications:
+    - target: {fileID: 852276936500927615, guid: 6e18767e46ecff741a1a03956bdf5833,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745729898837885774, guid: 6e18767e46ecff741a1a03956bdf5833,
         type: 3}
       propertyPath: m_Name
@@ -23439,6 +23484,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a6844758d5a7814bbb92c0ebedc2af0, type: 3}
+--- !u!114 &212832724058022691 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6784744423852508012, guid: 2a6844758d5a7814bbb92c0ebedc2af0,
+    type: 3}
+  m_PrefabInstance: {fileID: 212832724058022690}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f180eb3740a404b989962c1a66e776, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &390038054954238282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 390038054239857422, guid: cddbe6be0e35453428fdecb3663050e8,
@@ -23605,14 +23662,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6572775932502423667, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
         type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 8991892083108067612}
+    - target: {fileID: 6572775932502423667, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
+        type: 3}
       propertyPath: _orderUI
       value: 
       objectReference: {fileID: 1832321366}
     - target: {fileID: 6572775932502423667, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
         type: 3}
+      propertyPath: _winScreen
+      value: 
+      objectReference: {fileID: 212832724058022691}
+    - target: {fileID: 6572775932502423667, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
+        type: 3}
       propertyPath: _objectShelf
       value: 
       objectReference: {fileID: 5762286100564168144}
+    - target: {fileID: 6572775932502423667, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
+        type: 3}
+      propertyPath: _tutorialManager
+      value: 
+      objectReference: {fileID: 1670793504}
     - target: {fileID: 7787716742209628489, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
         type: 3}
       propertyPath: _orderUI
@@ -23630,3 +23702,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e927f4ba1dcb64c80dcc373ec0365c, type: 3}
+--- !u!114 &8991892083108067612 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8003606965894966914, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8991892083108067611}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0857c93cef4e2541b2e152a936bd595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -22,6 +22,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 
     [SerializeField] private LevelController _level;
 
+    private AudioSource _audioSource;
+
+    [SerializeField]
+    private AudioClip _throwAwaySFX;
+
     private int _NumberOfPickedUpDice => _pickedUpObjects.Count;
     private PickupObject _ClosestPickup => GetClosest(_inRangePickups);
     private ObjectShelf _ClosestShelf => GetClosest(_inRangeShelves);
@@ -38,6 +43,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     public Transform ContextualTarget => _contextualTarget;
 
     public bool IsHoldingSomething => _pickedUpObjects.Count > 0;
+
+    private void Awake()
+    {
+        _audioSource = GameObject.Find("SFXManager").GetComponent<AudioSource>();
+    }
 
     // Generic function that can be used on any type of GameObject
     private T GetClosest<T>(List<T> inList) where T: MonoBehaviour
@@ -205,6 +215,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 
     private void BinObject(PickupObject obj)
     {
+        _audioSource.PlayOneShot(_throwAwaySFX);
         _pickedUpObjects.Remove(obj);
         Destroy(obj.gameObject);
     }
