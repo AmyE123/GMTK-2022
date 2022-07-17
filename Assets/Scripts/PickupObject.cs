@@ -10,6 +10,8 @@ public class PickupObject : MonoBehaviour
     [SerializeField]
     private PickupHolder _currentHolder;
 
+    public virtual bool CanBePickedUp => true;
+
     public void SetToFollow(Transform toFollow)
     {
         _toFollow = toFollow;

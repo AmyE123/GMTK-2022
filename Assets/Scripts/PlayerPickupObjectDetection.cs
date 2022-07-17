@@ -69,7 +69,7 @@ public class PlayerPickupObjectDetection : MonoBehaviour
             _contextualAction = "pick up";
             _contextualTarget = _ClosestPickup.transform; // yes this is wasteful but gamejam
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && _ClosestPickup.CanBePickedUp)
             {
                 PickUpObject(_ClosestPickup);
                 _level.OnPlayerHoldChanged(_pickedUpObjects);

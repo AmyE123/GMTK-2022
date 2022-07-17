@@ -24,7 +24,7 @@ public class GameDice : PickupObject
     [SerializeField]
     private DiceColorSetting[] _allColors;
 
-    public bool CanBePickedUp => _isDestroying == false;
+    public override bool CanBePickedUp => _isDestroying == false;
 
     private DiceColor _color;
     private int _currentNum = 1;

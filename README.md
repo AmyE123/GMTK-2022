@@ -46,10 +46,7 @@
 * oven smoosh
 
 ### UI AND MENUS
-* Title screen
-* level select
 * truck UI for next delivery
-* restart level
 * pause
 * transition manager
 
