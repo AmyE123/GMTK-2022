@@ -14207,6 +14207,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2413052303741708248, guid: 09074502abe423244bb2a960343b44e0,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602152385157934374, guid: 09074502abe423244bb2a960343b44e0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4364312109411947367, guid: 09074502abe423244bb2a960343b44e0,
         type: 3}
       propertyPath: _startVisible
@@ -14394,7 +14404,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh278694
+  m_Name: pb_Mesh322062
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

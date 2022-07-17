@@ -50,3 +50,4 @@
 
 ### BUGS
 * picking up more stuff from ovens should be possible
+* lock the players position Y

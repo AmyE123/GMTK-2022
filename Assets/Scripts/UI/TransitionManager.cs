@@ -18,12 +18,25 @@ public class TransitionManager : MonoBehaviour
     [SerializeField]
     private CanvasGroup _grp;
 
+    [SerializeField]
+    private float _transitionSpeed = 0.6f;
+
     private string _sceneToLoad;
 
     // Start is called before the first frame update
     void Start()
     {
-        _instance = this;    
+        _instance = this;
+        
+        _image.fillAmount = 1;
+        _image.fillClockwise = false;
+        _grp.blocksRaycasts = true;
+        _grp.alpha = 1;
+
+        _image.DOFillAmount(0, _transitionSpeed).SetEase(Ease.Linear).SetDelay(0.1f).OnComplete(() => 
+        {
+            _grp.blocksRaycasts = false;
+        });
     }
 
     public static void StartTransition(string sceneName)
@@ -36,6 +49,16 @@ public class TransitionManager : MonoBehaviour
 
     private void StartTransition2(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        _grp.alpha = 1;
+        _grp.blocksRaycasts = true;
+        _image.fillAmount = 0;
+        _image.fillClockwise = true;
+
+        _image.DOFillAmount(1, _transitionSpeed).SetEase(Ease.Linear).OnComplete(() => 
+        {
+
+            SceneManager.LoadScene(sceneName);
+
+        });
     }
 }
