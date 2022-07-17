@@ -33,6 +33,7 @@ public class LevelController : MonoBehaviour
 
     public void Start()
     {
+        _orderUI.SetLevel(_levelConfig);
         _customerShelf.SetShelfWidth(_levelConfig.MaxOrders);
         _diceShelf.SetShelfWidth(_levelConfig.MaxDice);
         _ovenController.SetLevel(_levelConfig);
@@ -50,6 +51,11 @@ public class LevelController : MonoBehaviour
 
         if (_timeUntilNextCustomer <= 0)
             DoNewCustomer();
+    }
+
+    public void OnPlayerHoldChanged(IEnumerable<PickupObject> currentlyHolding)
+    {
+        _orderUI.OnPlayerHoldChanged(currentlyHolding);
     }
 
     private void DoRefill()

@@ -13,6 +13,9 @@ public class RecipeUI : MonoBehaviour
     private GameObject _requirementPrefab;
 
     [SerializeField]
+    private RectTransform _checkmarkRect;
+
+    [SerializeField]
     private RectTransform _requirementParent;
     
     private Recipe _recipe;
@@ -21,6 +24,7 @@ public class RecipeUI : MonoBehaviour
     public void SetCustomer(Customer customer)
     {
         _recipe = customer.RecipeRequest;
+        _checkmarkRect.gameObject.SetActive(false);
 
         foreach (DiceColor col in _recipe.Colors)
         {
@@ -35,8 +39,24 @@ public class RecipeUI : MonoBehaviour
         }
     }
 
+    public void SetPlayerValidRecipes(List<Recipe> recList)
+    {
+        bool showIcon = false;
+
+        foreach (Recipe r in recList)
+        {
+            if (r == _recipe)
+            {
+                showIcon = true;
+                break;
+            }
+        }
+
+        _checkmarkRect.gameObject.SetActive(showIcon);
+    }
+
     public void OnCompleted()
     {
-
+        // TODO make disappear
     }
 }

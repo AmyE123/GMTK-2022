@@ -39,3 +39,4 @@
 * move animations
 * also show icons requested on counter
 * make orders disappear
+* Make sure you can't put finished items into the oven

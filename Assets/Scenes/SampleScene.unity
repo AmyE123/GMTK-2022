@@ -851,6 +851,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6572775932502423667, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
         type: 3}
+      propertyPath: _orderUI
+      value: 
+      objectReference: {fileID: 1832321366}
+    - target: {fileID: 6572775932502423667, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
+        type: 3}
       propertyPath: _recipeUI
       value: 
       objectReference: {fileID: 1832321366}

@@ -18,6 +18,8 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     [SerializeField] private List<PickupObject> _pickedUpObjects;
     [SerializeField] private List<Transform> _pickupPoints;
 
+    [SerializeField] private LevelController _level;
+
     private int _NumberOfPickedUpDice => _pickedUpObjects.Count;
     private PickupObject _ClosestPickup => GetClosest(_inRangePickups);
     private ObjectShelf _ClosestShelf => GetClosest(_inRangeShelves);
@@ -64,7 +66,8 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {             
-                PickUpObject(_ClosestPickup);         
+                PickUpObject(_ClosestPickup);
+                _level.OnPlayerHoldChanged(_pickedUpObjects);
             }
         }
         else if (_IsFacingShelf && isHoldingStuff)
@@ -76,7 +79,8 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                PutDownObject(topHeldItem);  
+                PutDownObject(topHeldItem);
+                _level.OnPlayerHoldChanged(_pickedUpObjects);
             }
         }
         else if (_IsFacingOven && isHoldingStuff)
@@ -108,11 +112,9 @@ public class PlayerPickupObjectDetection : MonoBehaviour
                     {
                         Destroy(dice.gameObject);
                         _pickedUpObjects.Remove(dice);
+                        _level.OnPlayerHoldChanged(_pickedUpObjects);
                     }
                 }
-                // Ask _ClosestOven if it's already full
-                // Ask _ClosestOven if this is a valid combination
-                // put everything into _ClosestOven if we're good
             }
         }
         else if (_IsFacingOutput && isHoldingStuff)
@@ -127,8 +129,6 @@ public class PlayerPickupObjectDetection : MonoBehaviour
             _contextualAction = "";
             _contextualTarget = null;
         }
-
-
     }
 
     private void PickUpObject(PickupObject obj)
