@@ -9,6 +9,9 @@ public class ObjectShelf : PickupHolder
     [SerializeField]
     private PickupObject[] _putDownObjects;
 
+    [SerializeField]
+    private Transform _scalableSurface;
+
     public Transform[] PutDownPoints => _putDownPoints;
 
     private void Start()
@@ -18,7 +21,7 @@ public class ObjectShelf : PickupHolder
 
     public void SetWidth(int width)
     {
-        transform.localScale = new Vector3(width, 1, 1);
+        _scalableSurface.localScale = new Vector3(width, 1, 1);
         _putDownObjects = new PickupObject[width];
         _putDownPoints = new Transform[width];
 
