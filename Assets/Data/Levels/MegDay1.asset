@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde77b43644df674997f1d3354363ada, type: 3}
+  m_Name: MegDay1
+  m_EditorClassIdentifier: 
+  _levelName: day ???
+  _description: The Dice family have just open their bakery, and are trying to entice
+    their first customers
+  _potentialColors:
+  - _value: 0
+    _weight: 1
+  - _value: 3
+    _weight: 1
+  - _value: 1
+    _weight: 1
+  - _value: 2
+    _weight: 1
+  _potentialNumbers:
+  - _value: 6
+    _weight: 1
+  - _value: 5
+    _weight: 1
+  - _value: 4
+    _weight: 1
+  - _value: 3
+    _weight: 1
+  - _value: 2
+    _weight: 1
+  - _value: 1
+    _weight: 1
+  _potentialRecipes:
+  - _value: {fileID: 11400000, guid: 359752450522923489233edad1c87ceb, type: 2}
+    _weight: 1
+  - _value: {fileID: 11400000, guid: 9df51ed0cbd69a346b99f96965458669, type: 2}
+    _weight: 1
+  - _value: {fileID: 11400000, guid: 9e07605ef3db05c468635661e8adaa17, type: 2}
+    _weight: 1
+  - _value: {fileID: 11400000, guid: dc23805cfe8991342bb20e28b526cff0, type: 2}
+    _weight: 1
+  _maxDice: 5
+  _diceSpawnTime: 20
+  _orderSpawnTime: 9
+  _maxOrders: 3
+  _ovenCount: 2
+  _shelfSpace: 3
+  _totalLevelTime: 70
+  _happinessRequirement: 50

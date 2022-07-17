@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bde77b43644df674997f1d3354363ada, type: 3}
-  m_Name: Day6
+  m_Name: MegDay2
   m_EditorClassIdentifier: 
   _levelName: day ???
   _description: The Dice family have just open their bakery, and are trying to entice
     their first customers
   _potentialColors:
   - _value: 0
-    _weight: 2
+    _weight: 1
   - _value: 3
-    _weight: 2
+    _weight: 1
   - _value: 1
     _weight: 1
   - _value: 2
@@ -38,29 +38,23 @@ MonoBehaviour:
   - _value: 1
     _weight: 1
   _potentialRecipes:
-  - _value: {fileID: 11400000, guid: 3eb65625b43a80a46ba7a8426207b73d, type: 2}
-    _weight: 11
-  - _value: {fileID: 11400000, guid: dc23805cfe8991342bb20e28b526cff0, type: 2}
-    _weight: 10
   - _value: {fileID: 11400000, guid: 78a58e4c4f65a474c9bc2ba59e8c3b46, type: 2}
-    _weight: 12
-  - _value: {fileID: 11400000, guid: 9e07605ef3db05c468635661e8adaa17, type: 2}
-    _weight: 10
+    _weight: 13
   - _value: {fileID: 11400000, guid: 57ecac69f70e69141b49066bcb4e5d60, type: 2}
-    _weight: 8
+    _weight: 10
   - _value: {fileID: 11400000, guid: f5076cabf6c6707459823f5a0249dfb5, type: 2}
     _weight: 8
-  - _value: {fileID: 11400000, guid: 12f793badca673c4d9c28fef31608fed, type: 2}
-    _weight: 10
-  - _value: {fileID: 11400000, guid: 4a2ad540430f7d7479bae55cbe424e6f, type: 2}
-    _weight: 10
   - _value: {fileID: 11400000, guid: 5fc5d01a39d5af342b1b918f21de6d7c, type: 2}
+    _weight: 5
+  - _value: {fileID: 11400000, guid: 2799d03e70b382547bffd17523e18053, type: 2}
+    _weight: 12
+  - _value: {fileID: 11400000, guid: 40972fd2112aecb4195d3f5c5e02332f, type: 2}
     _weight: 8
   _maxDice: 5
-  _diceSpawnTime: 20
-  _orderSpawnTime: 10
+  _diceSpawnTime: 15
+  _orderSpawnTime: 8
   _maxOrders: 3
   _ovenCount: 2
   _shelfSpace: 3
-  _totalLevelTime: 90
+  _totalLevelTime: 100
   _happinessRequirement: 0
