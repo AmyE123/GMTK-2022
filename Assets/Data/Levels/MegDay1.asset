@@ -17,13 +17,13 @@ MonoBehaviour:
     their first customers
   _potentialColors:
   - _value: 0
-    _weight: 1
+    _weight: 8
   - _value: 3
-    _weight: 1
+    _weight: 10
   - _value: 1
-    _weight: 1
+    _weight: 10
   - _value: 2
-    _weight: 1
+    _weight: 8
   _potentialNumbers:
   - _value: 6
     _weight: 1
@@ -39,13 +39,13 @@ MonoBehaviour:
     _weight: 1
   _potentialRecipes:
   - _value: {fileID: 11400000, guid: 359752450522923489233edad1c87ceb, type: 2}
-    _weight: 1
+    _weight: 11
   - _value: {fileID: 11400000, guid: 9df51ed0cbd69a346b99f96965458669, type: 2}
-    _weight: 1
+    _weight: 9
   - _value: {fileID: 11400000, guid: 9e07605ef3db05c468635661e8adaa17, type: 2}
-    _weight: 1
+    _weight: 9
   - _value: {fileID: 11400000, guid: dc23805cfe8991342bb20e28b526cff0, type: 2}
-    _weight: 1
+    _weight: 11
   _maxDice: 5
   _diceSpawnTime: 20
   _orderSpawnTime: 9
@@ -54,3 +54,5 @@ MonoBehaviour:
   _shelfSpace: 3
   _totalLevelTime: 70
   _happinessRequirement: 50
+  _tutorialDiceQueue: []
+  _tutorialRequestQueue: []

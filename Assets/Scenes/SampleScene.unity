@@ -1274,7 +1274,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _levelConfig
       value: 
-      objectReference: {fileID: 11400000, guid: ed43e0bb123b980438a72910485e07a1,
+      objectReference: {fileID: 11400000, guid: f7cdc0e0137c5664bb69d8628cd6669e,
         type: 2}
     - target: {fileID: 6572775932502423667, guid: 54e927f4ba1dcb64c80dcc373ec0365c,
         type: 3}
