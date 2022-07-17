@@ -38,14 +38,14 @@ public class TutorialManager : MonoBehaviour
 
     void DiceTakenFromInput()
     {
-        if (_stage == 2)
-            _stage ++;
+        if (_stage < 3)
+            _stage = 3;
     }
 
     void OvenBakeEvent()
     {
-        if (_stage == 3)
-            _stage ++;
+        if (_stage <= 3)
+            _stage = 4;
     }
 
     void OvenEnterEvent()

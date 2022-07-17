@@ -56,6 +56,7 @@ public class OutputShelf : MonoBehaviour
             return true;
         }
 
+        WorldToCanvas.W2CManager.CreateError(food.transform.position, "Nobody wants that");
         return false;
     }
 

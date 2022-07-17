@@ -113,6 +113,7 @@ public class LevelController : MonoBehaviour
         _currentHappyPoints += food.Recipe.BasePoints;
         _deliveryCount ++;
         // TODO burst and text and particles
+        WorldToCanvas.W2CManager.CreateText(food.transform.position, $"+{food.Recipe.BasePoints} HAPPY POINTS!");
     }
 
     public void OnPlayerHoldChanged(IEnumerable<PickupObject> currentlyHolding)

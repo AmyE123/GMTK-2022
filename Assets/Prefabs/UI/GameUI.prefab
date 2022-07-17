@@ -335,6 +335,8 @@ MonoBehaviour:
   _canvasRect: {fileID: 212832723503109817}
   _errorPrefab: {fileID: 4735847286300556927, guid: 9d407eb5d40f52246a07279621c1cfb1,
     type: 3}
+  _textPrefab: {fileID: 4735847286300556927, guid: 733882d9b3d76bd4d8a2bf5e3e235c9f,
+    type: 3}
 --- !u!1 &212832724815815282
 GameObject:
   m_ObjectHideFlags: 0

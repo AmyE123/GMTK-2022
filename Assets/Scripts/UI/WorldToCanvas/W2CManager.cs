@@ -10,6 +10,7 @@ namespace WorldToCanvas
 
         [SerializeField] RectTransform _canvasRect;
         [SerializeField] private GameObject _errorPrefab;
+        [SerializeField] private GameObject _textPrefab;
 
         Canvas _canvas;     
         RectTransform _rect;
@@ -63,6 +64,12 @@ namespace WorldToCanvas
         public static void CreateError(Vector3 position, string text)
         {
             TextBurst burst = InstantiateAs<TextBurst>(_instance._errorPrefab);
+            burst.Init(position, text);
+        }
+
+        public static void CreateText(Vector3 position, string text)
+        {
+            TextBurst burst = InstantiateAs<TextBurst>(_instance._textPrefab);
             burst.Init(position, text);
         }
 

@@ -2,16 +2,6 @@
 
 ## TODO
 
-### ONBOARDING
-* Tutorial Messages
-    * Putting dice with matching numbers in
-    * Giving items to customers
-    * Putting dice with matching colors in
-    * Waiting for next delivery of dice + any unused decay
-* Tutorial functionality
-    * no decaying
-* Tutorial level with special rules...?
-
 ### UX
 * error messages if you try to deliver something that isn't a product
 * NEW DELIVERY text burst (and full)
