@@ -8,6 +8,38 @@ public class Oven : MonoBehaviour
     private LevelConfig _levelConfig;
     private float _timeLeft;
 
+    public bool HasItemReady => _currentItem != null && _timeLeft <= 0;
+
+    public bool IsBaking => _currentItem != null && _timeLeft > 0;
+
+    public void Update()
+    {
+        if (_currentItem != null && _timeLeft > 0)
+        {
+            _timeLeft -= Time.deltaTime;
+            
+            if (_timeLeft <= 0)
+                OnBakeComplete();
+        }
+    }
+
+    private void OnBakeComplete()
+    {
+        Debug.Log($"Finished baking: {_currentItem.name}");
+        // play some animation perhaps?
+    }
+
+    public Recipe TakeOutItem()
+    {
+        if (_currentItem == null || _timeLeft > 0)
+            return null;
+
+        Recipe item = _currentItem;
+        _currentItem = null;
+        
+        return item;
+    }
+
     public bool GiveDice(List<GameDice> diceList)
     {
         if (_currentItem != null)

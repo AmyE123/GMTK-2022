@@ -31,12 +31,11 @@
 * truck UI for next delivery
 * Make the shelf customisable size on startup
 * put down in closest slot on shelf not first available
-
-* add matching methods to recipies (Ask a recipe if a combination of dice match)
-* show on UI if what you're holding matches a recipe (change when held dice changes)
 * error messages if you try to deliver something that isn't a product
 * product items and holding them!
 * move animations
 * also show icons requested on counter
 * make orders disappear
 * Make sure you can't put finished items into the oven
+* Dice should appear on oven
+* visuals for oven in progress

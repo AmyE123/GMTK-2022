@@ -117,6 +117,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
                 }
             }
         }
+        else if (_IsFacingOven && isHoldingStuff == false && _ClosestOven.HasItemReady)
+        {
+            _contextualAction = "take out food";
+            _contextualTarget = _ClosestOven.transform;
+        }
         else if (_IsFacingOutput && isHoldingStuff)
         {
             PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
