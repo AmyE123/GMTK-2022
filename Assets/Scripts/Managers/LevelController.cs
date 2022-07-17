@@ -95,7 +95,7 @@ public class LevelController : MonoBehaviour
     public void OnDeliveryComplete(FinishedFood food)
     {
         int freshnessBonus = Mathf.Clamp(((int) food.Freshness + 1) * 5, 0, 10);
-        _currentHappyPoints += food.Recipe.BasePoints + freshnessBonus;
+        _currentHappyPoints += food.Recipe.BasePoints;
         _deliveryCount ++;
         // TODO burst and text and particles
     }

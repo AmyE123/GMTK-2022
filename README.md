@@ -6,7 +6,6 @@
 * Tutorial Messages
     * Putting dice with matching numbers in
     * Giving items to customers
-    * Freshness bonus
     * Putting dice with matching colors in
     * Waiting for next delivery of dice + any unused decay
 * Tutorial functionality
@@ -31,6 +30,7 @@
 * put down things back onto belt
 * use dice count to make score when using colours
 * remove freshenss
+* lower happiness when things decay
 
 ### COSMETIC
 * Dice should appear on oven
