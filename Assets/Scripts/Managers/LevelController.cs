@@ -51,6 +51,8 @@ public class LevelController : MonoBehaviour
 
     public float LevelTimePercent => 1 - Mathf.Clamp01(_timeRemaining / _levelConfig.TotalLevelTime);
 
+    public float LevelTimeRemaining => Mathf.Clamp(_timeRemaining, 0, 9999);
+
     private bool _timeUp;
 
     public void Start()
