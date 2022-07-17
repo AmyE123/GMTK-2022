@@ -34,6 +34,6 @@ MonoBehaviour:
   _orderSpawnTime: 5
   _maxOrders: 3
   _ovenCount: 3
-  _shelfSpace: 2
+  _shelfSpace: 5
   _totalLevelTime: 90
   _happinessRequirement: 0

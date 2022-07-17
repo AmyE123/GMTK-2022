@@ -15,6 +15,9 @@ public class LevelController : MonoBehaviour
     private InputShelf _diceShelf;
 
     [SerializeField]
+    private ObjectShelf _objectShelf;
+
+    [SerializeField]
     private OutputShelf _customerShelf;
 
     [SerializeField]
@@ -35,6 +38,7 @@ public class LevelController : MonoBehaviour
     {
         _orderUI.SetLevel(_levelConfig);
         _customerShelf.SetShelfWidth(_levelConfig.MaxOrders);
+        _objectShelf.SetWidth(_levelConfig.ShelfSpace);
         _diceShelf.SetShelfWidth(_levelConfig.MaxDice);
         _ovenController.SetLevel(_levelConfig);
         DoRefill();
