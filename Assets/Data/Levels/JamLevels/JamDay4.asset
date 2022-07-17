@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bde77b43644df674997f1d3354363ada, type: 3}
-  m_Name: MegDay3 1
+  m_Name: JamDay4
   m_EditorClassIdentifier: 
-  _levelName: Day 5
-  _description: but it's too late for that, so they scramble together what they have
+  _levelName: Day 4
+  _description: '"if only we had just one more day" they think to themselves'
   _potentialColors:
   - _value: 0
-    _weight: 10
+    _weight: 11
   - _value: 3
     _weight: 7
   - _value: 1
     _weight: 7
   - _value: 2
-    _weight: 10
+    _weight: 7
   _potentialNumbers:
   - _value: 6
     _weight: 1
@@ -61,35 +61,19 @@ MonoBehaviour:
     _weight: 1
   - _value: {fileID: 11400000, guid: 924ae75c716ce1b43accc9cd0a0ac1e5, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: cdbdd275e45c59f4584442b10f5ea8a0, type: 2}
+  - _value: {fileID: 11400000, guid: 9de0a871f877608429ba6ffc38b4ea2e, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 8e1077db2c372c2438aa6d953ff1f6df, type: 2}
+  - _value: {fileID: 11400000, guid: 4470961cd45b3524581bbb5f94c7a3a0, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 6ea3088e5aa5b0b4d8e63d294aba9614, type: 2}
+  - _value: {fileID: 11400000, guid: 7d6867f38e767a6459b716ecfd85871b, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 23f88b66207db024b8eaf84a0970490f, type: 2}
+  - _value: {fileID: 11400000, guid: 547817fee830cbc439cb7bfa667143e7, type: 2}
     _weight: 1
-  - _value: {fileID: 11400000, guid: 84a999329f3e4ed48a7e6e4ab5deda69, type: 2}
-    _weight: 1
-  - _value: {fileID: 11400000, guid: c7e5a6fffc6682043ae78fbb3697cbf6, type: 2}
-    _weight: 1
-  - _value: {fileID: 11400000, guid: 83174ad9f00bf5547acdfff2acf45790, type: 2}
-    _weight: 1
-  - _value: {fileID: 11400000, guid: 37d88439b74718344bb06d977b426274, type: 2}
-    _weight: 1
-  - _value: {fileID: 11400000, guid: e3c2089f57e642742a4c66e871226147, type: 2}
-    _weight: 1
-  - _value: {fileID: 11400000, guid: 2a366f168f6333b4590d55a6213c8659, type: 2}
-    _weight: 1
-  - _value: {fileID: 11400000, guid: 9f266efae12ca7940a6a890437d97c7f, type: 2}
-    _weight: 1
-  - _value: {fileID: 11400000, guid: 8a57e915fb79c0e45973d807f99973a5, type: 2}
-    _weight: 1
-  _maxDice: 5
+  _maxDice: 8
   _diceSpawnTime: 20
   _orderSpawnTime: 6
   _maxOrders: 3
-  _ovenCount: 2
+  _ovenCount: 3
   _shelfSpace: 4
   _totalLevelTime: 150
   _happinessRequirement: 0
