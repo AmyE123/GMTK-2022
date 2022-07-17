@@ -24,12 +24,47 @@ public class OutputShelf : MonoBehaviour
     [SerializeField]
     private float _socialDistancing = 1f;
 
+    [SerializeField]
+    private OrderList _orderUI;
+
+    [SerializeField]
+    private List<Customer> _customersInOrderTheyCame;
+
     private int ShelfWidth => _customerSlots == null ? 0 : _customerSlots.Length;
+
+    public IEnumerable<Customer> CustomersInOrderTheyCame => _customersInOrderTheyCame;
+
+    public bool TryPutDownFood(FinishedFood food)
+    {
+        foreach (Customer c in _customersInOrderTheyCame)
+        {
+            if (c.RecipeRequest != food.Recipe)
+            {
+                continue;
+            }
+
+            food.SetToFollow(c.HandTransform);
+            OnCustomerComplete(c);
+            return true;
+        }
+
+        return false;
+    }
+
+    private void OnCustomerComplete(Customer customer)
+    {
+        _customersInOrderTheyCame.Remove(customer);
+        customer.TakeCompletedGoods();
+    }
 
     public void SetShelfWidth(int width)
     {
         _meshParent.localScale = new Vector3(width * _socialDistancing, 1, 1);
         _customerSlots = new Customer[width];
+
+        BoxCollider collider = GetComponent<BoxCollider>();
+        collider.center = new Vector3(width * _socialDistancing * -0.5f, 1, 0.5f);
+        collider.size = new Vector3(width * _socialDistancing, 2, 1);
     }
 
     public bool SpawnRandomNewCustomer(LevelConfig levelData)
@@ -54,6 +89,10 @@ public class OutputShelf : MonoBehaviour
 
         Customer customer = newObj.GetComponent<Customer>();
         customer.SetRequest(productRequest);
+        _customersInOrderTheyCame.Add(customer);
+        
+        RecipeUI newUI = _orderUI.AddOrder(customer);
+        customer.SetUI(newUI);
 
         _customerSlots[slotNum] = customer;
 

@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private const int PLAYER_MOVEMENT_SPEED = 5;
-    private const int PLAYER_ROTATION_SPEED = 10;
+    private const int DEFAULT_MOVEMENT_SPEED = 5;
+    private const int DEFAULT_ROTATION_SPEED = 10;
 
     [SerializeField] private Transform _transform;
     [SerializeField] private CharacterController _characterController;
 
     private Vector3 _velocity;
-    private float _movementSpeed = PLAYER_MOVEMENT_SPEED;
-    private float _rotationSpeed = PLAYER_ROTATION_SPEED;
+    private float _movementSpeed = DEFAULT_MOVEMENT_SPEED;
+    private float _rotationSpeed = DEFAULT_ROTATION_SPEED;
 
     void Update()
     {

@@ -16,5 +16,5 @@ MonoBehaviour:
   _displayName: Cherry Cake
   _requiredColors: 00000000
   _requiredNumbers: 05000000
-  _bakeTime: 0
-  _baseHappinessPoints: 0
+  _bakeTime: 3
+  _baseHappinessPoints: 1

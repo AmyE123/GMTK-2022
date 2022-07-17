@@ -9,13 +9,16 @@ public class LevelController : MonoBehaviour
     private LevelConfig _levelConfig;
 
     [SerializeField]
+    private OvenController _ovenController;
+
+    [SerializeField]
     private InputShelf _diceShelf;
 
     [SerializeField]
     private OutputShelf _customerShelf;
 
     [SerializeField]
-    private RecipeList _recipeUI;
+    private OrderList _orderUI;
 
     [SerializeField]
     private float _timeRemaining;
@@ -30,9 +33,10 @@ public class LevelController : MonoBehaviour
 
     public void Start()
     {
-        _recipeUI.SetLevel(_levelConfig);
+        _orderUI.SetLevel(_levelConfig);
         _customerShelf.SetShelfWidth(_levelConfig.MaxOrders);
         _diceShelf.SetShelfWidth(_levelConfig.MaxDice);
+        _ovenController.SetLevel(_levelConfig);
         DoRefill();
     }
 
@@ -47,6 +51,11 @@ public class LevelController : MonoBehaviour
 
         if (_timeUntilNextCustomer <= 0)
             DoNewCustomer();
+    }
+
+    public void OnPlayerHoldChanged(IEnumerable<PickupObject> currentlyHolding)
+    {
+        _orderUI.OnPlayerHoldChanged(currentlyHolding);
     }
 
     private void DoRefill()

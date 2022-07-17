@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 212832724815815280}
   - component: {fileID: 212832724815815284}
   m_Layer: 5
-  m_Name: RecipeList
+  m_Name: OrderList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,8 +382,8 @@ MonoBehaviour:
     m_Right: 8
     m_Top: 8
     m_Bottom: 8
-  m_ChildAlignment: 0
-  m_Spacing: 24
+  m_ChildAlignment: 3
+  m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -611,6 +611,46 @@ PrefabInstance:
     - target: {fileID: 2829113588028201183, guid: a351ae241e4d71548b00ff1ff2acec90,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829113589235861160, guid: a351ae241e4d71548b00ff1ff2acec90,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829113589235861160, guid: a351ae241e4d71548b00ff1ff2acec90,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829113589235861160, guid: a351ae241e4d71548b00ff1ff2acec90,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829113589235861160, guid: a351ae241e4d71548b00ff1ff2acec90,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829113589235861160, guid: a351ae241e4d71548b00ff1ff2acec90,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829113589235861160, guid: a351ae241e4d71548b00ff1ff2acec90,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829113589288171573, guid: a351ae241e4d71548b00ff1ff2acec90,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829113589288171573, guid: a351ae241e4d71548b00ff1ff2acec90,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -1,3 +1,4 @@
+using GameData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,18 +8,23 @@ public class PlayerPickupObjectDetection : MonoBehaviour
     private bool _IsFacingDice => _inRangePickups.Count > 0;
     private bool _IsFacingShelf => _inRangeShelves.Count > 0;
     private bool _IsFacingOven => _inRangeOvens.Count > 0;
+    private bool _IsFacingOutput => _inRangeOutputs.Count > 0;
 
     [SerializeField] private List<PickupObject> _inRangePickups;
     [SerializeField] private List<ObjectShelf> _inRangeShelves;
+    [SerializeField] private List<OutputShelf> _inRangeOutputs;
     [SerializeField] private List<Oven> _inRangeOvens;
 
     [SerializeField] private List<PickupObject> _pickedUpObjects;
     [SerializeField] private List<Transform> _pickupPoints;
 
+    [SerializeField] private LevelController _level;
+
     private int _NumberOfPickedUpDice => _pickedUpObjects.Count;
     private PickupObject _ClosestPickup => GetClosest(_inRangePickups);
     private ObjectShelf _ClosestShelf => GetClosest(_inRangeShelves);
     private Oven _ClosestOven => GetClosest(_inRangeOvens);
+    private OutputShelf _ClosestOutput => GetClosest(_inRangeOutputs);
 
     [SerializeField]
     private string _contextualAction = "???";
@@ -60,7 +66,8 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {             
-                PickUpObject(_ClosestPickup);         
+                PickUpObject(_ClosestPickup);
+                _level.OnPlayerHoldChanged(_pickedUpObjects);
             }
         }
         else if (_IsFacingShelf && isHoldingStuff)
@@ -72,7 +79,8 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                PutDownObject(topHeldItem);  
+                PutDownObject(topHeldItem);
+                _level.OnPlayerHoldChanged(_pickedUpObjects);
             }
         }
         else if (_IsFacingOven && isHoldingStuff)
@@ -84,9 +92,71 @@ public class PlayerPickupObjectDetection : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                // Ask _ClosestOven if it's already full
-                // Ask _ClosestOven if this is a valid combination
-                // put everything into _ClosestOven if we're good
+                var ovn = _ClosestOven;
+
+                List<GameDice> gameDice = new List<GameDice>();
+
+                foreach (PickupObject obj in _pickedUpObjects)
+                {
+                    if (obj is GameDice)
+                    {
+                        gameDice.Add(obj as GameDice);
+                    }
+                }
+
+                bool didSucceed = ovn.GiveDice(gameDice);
+
+                if (didSucceed)
+                {
+                    foreach(GameDice dice in gameDice)
+                    {
+                        Destroy(dice.gameObject);
+                        _pickedUpObjects.Remove(dice);
+                        _level.OnPlayerHoldChanged(_pickedUpObjects);
+                    }
+                }
+            }
+        }
+        else if (_IsFacingOven && areHandsFull == false && _ClosestOven.HasItemReady)
+        {
+            _contextualAction = "take out food";
+            _contextualTarget = _ClosestOven.transform;
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                FinishedFood result = _ClosestOven.TakeOutItem();
+
+                if (result != null)
+                {
+                    PickUpObject(result);
+                    _level.OnPlayerHoldChanged(_pickedUpObjects);
+                }
+            }
+        }
+        else if (_IsFacingOutput && isHoldingStuff)
+        {
+            PickupObject topHeldItem = _pickedUpObjects[_NumberOfPickedUpDice - 1];
+
+            if (topHeldItem is FinishedFood)
+            {
+                _contextualAction = "deliver";
+                _contextualTarget = topHeldItem.transform;
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    bool success = _ClosestOutput.TryPutDownFood(topHeldItem as FinishedFood);
+
+                    if (success)
+                    {
+                        _pickedUpObjects.Remove(topHeldItem);
+                        _level.OnPlayerHoldChanged(_pickedUpObjects);
+                    }
+                }
+            }
+            else
+            {
+                _contextualAction = "";
+                _contextualTarget = null;
             }
         }
         else
@@ -94,8 +164,6 @@ public class PlayerPickupObjectDetection : MonoBehaviour
             _contextualAction = "";
             _contextualTarget = null;
         }
-
-
     }
 
     private void PickUpObject(PickupObject obj)
@@ -133,6 +201,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         {
             _inRangeOvens.Add(other.GetComponent<Oven>());
         }
+
+        if (other.transform.tag == "Output")
+        {
+            _inRangeOutputs.Add(other.GetComponent<OutputShelf>());
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -150,6 +223,11 @@ public class PlayerPickupObjectDetection : MonoBehaviour
         if (other.transform.tag == "Oven")
         {
             _inRangeOvens.Remove(other.GetComponent<Oven>());
+        }
+
+        if (other.transform.tag == "Output")
+        {
+            _inRangeOutputs.Remove(other.GetComponent<OutputShelf>());
         }
     }
 }
