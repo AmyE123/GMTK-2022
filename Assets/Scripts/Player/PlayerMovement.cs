@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform _transform;
     [SerializeField] private CharacterController _characterController;
 
+    [SerializeField] private float _floorLevel = 0.5f;
+
     private Vector3 _velocity;
     private float _movementSpeed = DEFAULT_MOVEMENT_SPEED;
     private float _rotationSpeed = DEFAULT_ROTATION_SPEED;
@@ -30,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
         bool isGrounded = _characterController.isGrounded;
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         move = Vector3.ClampMagnitude(move, 1);
+        
+        Vector3 pos = transform.position;
+        pos.y = _floorLevel;
+        transform.position = pos;
 
         if (isGrounded && _velocity.y < 0)
         {
